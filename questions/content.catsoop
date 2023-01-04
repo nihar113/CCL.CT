@@ -227,7 +227,7 @@ PRIMES = [127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181,
 </python>
 
 <question pythoncode>
-csq_interface = 'ace'
+csq_interface = 'codemirror'
 
 csq_prompt="""
 Define a function `prime` that takes a single integer argument
