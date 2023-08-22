@@ -83,10 +83,10 @@ csq_python_sandbox = "python"
 #
 #if 'localhost' in cs_url_root:
 #    # locally, just use the system Python install
-#    csq_python_interpreter = '/usr/bin/python3'
+#    csq_python_sandbox_interpreter = '/usr/bin/python3'
 #else:
 #    # on the server, use the properly sandboxed python
-#    csq_python_interpreter = '/home/ubuntu/py3_sandbox/bin/python3'
+#    csq_python_sandbox_interpreter = '/home/ubuntu/py3_sandbox/bin/python3'
 
 
 # PERMISSIONS
