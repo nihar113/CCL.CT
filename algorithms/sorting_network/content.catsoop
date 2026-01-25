@@ -1,0 +1,82 @@
+# Sorting Maps
+
+<center>
+<img src="COURSE/algorithms/sorting_network/sorting_network_1.png" alt="Sorting Network Map" height="400"/>
+</center>
+
+<catsoop-section>Introduction</catsoop-section>
+
+Ever wondered how computers sort random things into order so quickly? We often work with ordered lists, making information easier to find. Telephone directories, dictionaries, and book indexes use alphabetical order for convenience. Without sorting, finding information would be much more complicated. Despite their speed, computers have limits on how quickly they can solve problems, but they sort things with the help of a sorting map.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Chalks
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Draw a given sorting map on land by chalk or any other thing.
+
+2. Randomly 4 students take pen paper and write any number on paper.
+
+3. Now one student will stand up in one rectangular box each.
+
+4. As shown by arrow two students from first two boxes will come in first circle and last two rectangle's students will come in second circle.
+
+5. Now from both circles the student who has the least number will go to the circle denoted by the green arrow and the student who has greater number will go to the circle denoted by the red arrow.
+
+6. Again the smaller number goes to the first rectangular box and the greater number goes to the last rectangular box. Thus we get the least and the greatest number.
+
+7. Remaining numbers go to the next circle. Again they will be distributed by a small number that goes next to the least number's rectangle and greater number will go before the greatest number's rectangular box.
+
+8. Now see the result of the last rectangular boxes.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Here at first we sort smaller and bigger numbers from the first two and last two rectangular boxes. Then again we sort smaller and bigger numbers from these smaller numbers circle and bigger numbers circle. By this way we got the smallest to biggest number in ascending order.
+
+This is called a **sorting network** — a fixed sequence of comparisons that sorts any input. Computers use similar algorithms to sort data efficiently!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Draw a sorting map to arrange 3 numbers in ascending/descending order. How many comparison circles do you need at minimum? '
+csq_soln = '3'
+csq_check_function = lambda sub, sol: sub.strip() == sol
+csq_size = 10
+csq_explanation = 'To sort 3 numbers, you need at least 3 comparisons. A simple sorting network for 3 elements compares: (1,2), then (1,3), then (2,3) - giving us 3 comparison circles.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'If you want to arrange names in alphabetical order using a sorting map, what would you compare?'
+csq_options = [
+    'The first letter of each name (or subsequent letters if they match)',
+    'The length of each name',
+    'The number of vowels in each name',
+    'The last letter of each name'
+]
+csq_soln = 'The first letter of each name (or subsequent letters if they match)'
+csq_explanation = 'To sort names alphabetically, we compare them letter by letter starting from the first letter. If the first letters are the same, we compare the second letters, and so on. This is called lexicographic ordering.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What is the main advantage of using a sorting network?'
+csq_options = [
+    'The comparisons can happen in parallel, making sorting faster',
+    'It uses less paper',
+    'It only works for 4 numbers',
+    'It requires no comparisons'
+]
+csq_soln = 'The comparisons can happen in parallel, making sorting faster'
+csq_explanation = 'Sorting networks allow multiple comparisons to happen at the same time (in parallel). In our activity, the first two boxes and last two boxes are compared simultaneously. This parallelism is why sorting networks are used in hardware and parallel computing.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'In our 4-number sorting map, how many total comparisons (circles) are needed to sort all 4 numbers?<br/>'
+csq_soln = 5
+csq_explanation = '''A 4-element sorting network requires 5 comparisons:
+- First round: 2 comparisons (first pair and second pair in parallel)
+- Second round: 1 comparison (smallest vs smallest, largest vs largest)
+- Third round: 2 comparisons (middle two elements)
+
+Total = 5 comparisons'''
+</question>

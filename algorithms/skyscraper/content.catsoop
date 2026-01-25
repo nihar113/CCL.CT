@@ -1,0 +1,148 @@
+# Skyscraper Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+The Skyscraper puzzle is a logic-based grid puzzle where the player imagines building skyscrapers of varying heights in a city grid. The numbers outside the grid tell how many buildings are visible from that direction. Taller buildings block the view of shorter ones behind them.
+
+You can also use any objects (like blocks, boxes, or bottle caps) in place of buildings to play physically.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Square grid base (e.g., 4×4)
+- Colored building blocks of 4 different heights (e.g., 1 to 4 units)
+- Template for buildings
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_1.png" alt="Skyscraper Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+**Rule 1**
+
+1. The puzzle consists of 4 buildings.
+2. Each building has height 1, 2, 3 & 4 units respectively.
+3. You will be using these sixteen buildings:
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_2.png" alt="Rule 1 - Building Heights" height="300"/>
+</center>
+
+**Rule 2**
+
+1. Skyscrapers in each row and column must all be different heights.
+2. Can you place all 16 skyscrapers so that every row and column follows Rule 2?
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_3.png" alt="Rule 2 - Different Heights" height="300"/>
+</center>
+
+**Rule 3**
+
+1. The number in a row tells you how many skyscrapers you should see if you were standing on that arrow.
+2. You have to place the skyscrapers in the grid below so that they follow Rules 1, 2, 3.
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_4.png" alt="Rule 3 - Visibility Clues" height="300"/>
+</center>
+
+**How to Make Buildings from the Given Template**
+
+1. Take the building template.
+2. Cut one strip.
+3. Understand mountain fold (like a hill) and valley fold (like a dip).
+4. Make mountain fold at dashed lines.
+5. And a valley fold at dotted lines.
+6. Continue making alternate folds like a fan.
+7. And your building is ready.
+8. Now place the buildings in the grid.
+9. Follow all 3 rules carefully.
+10. Try different combinations until it fits.
+11. You can use household objects to replicate the buildings.
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_5.png" alt="Building Template Instructions" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+The Skyscraper puzzle combines several computational thinking concepts:
+
+- **Constraint satisfaction** — Each cell must satisfy multiple rules (unique in row, unique in column, visibility clues)
+- **Logical deduction** — Using clues to eliminate impossible placements
+- **Latin square** — The basic grid (without visibility clues) is a Latin square, used in experimental design and cryptography
+- **Perspective and occlusion** — Understanding how taller objects block the view of shorter ones
+
+This puzzle is related to Sudoku but adds the creative twist of 3D visualization!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Q1. Make your own 3×3 Skyscrapers Puzzle. What are the possible building heights you would use? '
+csq_soln = '1, 2, 3'
+csq_check_function = lambda sub, sol: '1' in sub and '2' in sub and '3' in sub
+csq_size = 20
+csq_explanation = '''For a 3×3 Skyscraper puzzle, you would use buildings of heights 1, 2, and 3.
+
+Rules:
+- Place heights 1, 2, 3 in each row (no repeats)
+- Place heights 1, 2, 3 in each column (no repeats)
+- Visibility clues on edges tell how many buildings you can see from that direction
+
+A clue of "3" means you see all three buildings (they must be in ascending order: 1, 2, 3).
+A clue of "1" means you only see one building (the tallest, 3, must be first).'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Q2. Make your own 4×4 Skyscrapers Puzzle. If a clue says "4", what must be the order of buildings in that row/column? '
+csq_soln = '1,2,3,4'
+csq_check_function = lambda sub, sol: '1' in sub and '2' in sub and '3' in sub and '4' in sub
+csq_size = 20
+csq_explanation = '''If a visibility clue is "4" in a 4×4 puzzle, you must see ALL 4 buildings. This only happens when buildings are arranged in ascending order: 1, 2, 3, 4.
+
+Similarly:
+- Clue "1" means tallest (4) is first: 4, ?, ?, ?
+- Clue "2" means you see 2 buildings
+- Clue "3" means you see 3 buildings
+- Clue "4" means ascending order: 1, 2, 3, 4'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Q3. Can you arrange the numbers 1 to 9 in a 3×3 grid (using each number once) so that the sum of every row, column, and diagonal is 15? Enter the middle row (e.g., "3,5,7"): '
+csq_soln = '9,5,1'
+csq_check_function = lambda sub, sol: '5' in sub and sum([int(x.strip()) for x in sub.split(',') if x.strip().isdigit()]) == 15 if ',' in sub else '5' in sub
+csq_size = 15
+csq_explanation = '''This is the classic 3×3 magic square! The solution is:
+
+| 2 | 7 | 6 |  → 15
+| 9 | 5 | 1 |  → 15
+| 4 | 3 | 8 |  → 15
+  ↓   ↓   ↓
+ 15  15  15
+
+Diagonals: 2+5+8 = 15 and 6+5+4 = 15
+
+Key insight: The number 5 must always be in the center!'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'If you see a clue of "1" on the edge of the grid, what does it tell you about the first building in that row/column?'
+csq_options = [
+    'The first building must be the tallest (height 4 in a 4×4 grid)',
+    'The first building must be the shortest (height 1)',
+    'Any building can be first',
+    'There is only one building in that row'
+]
+csq_soln = 'The first building must be the tallest (height 4 in a 4×4 grid)'
+csq_explanation = 'A clue of "1" means you can only see ONE building from that direction. This only happens when the tallest building is first — it blocks the view of all buildings behind it. So in a 4×4 grid, a "1" clue means the first building must be height 4.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'In a 4×4 Skyscraper puzzle, how many total buildings do you need to place?<br/>'
+csq_soln = 16
+csq_explanation = 'In a 4×4 grid, you need to place one building in each cell. Total cells = 4 × 4 = 16 buildings. You\'ll use 4 buildings each of heights 1, 2, 3, and 4 (4 × 4 = 16 buildings total).'
+</question>
+
+<center>
+<img src="COURSE/algorithms/skyscraper/skyscraper_6.png" alt="Skyscraper Challenge" height="400"/>
+</center>

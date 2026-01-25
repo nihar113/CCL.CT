@@ -1,0 +1,116 @@
+# Slide Adding Machine
+
+<center>
+<img src="COURSE/architecture/slide_adding_machine/slide_adding_machine_1.png" alt="Slide Adding Machine" height="400"/>
+</center>
+
+<catsoop-section>Introduction</catsoop-section>
+
+In this activity, you will make a simple tool that helps you add numbers by sliding paper strips. It works like an old calculator. You will see how position and movement can show numbers and how addition happens by sliding.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Chart paper or cardboard (A4 or A3 size)
+- Two long paper strips (10–20 cm long)
+- Scale and pencil
+- Scissors
+- Glue or tape
+- Sketch pens or markers
+- Transparent plastic sheet (optional)
+
+<catsoop-section>Instructions</catsoop-section>
+
+**Step 1: Make the Base**
+
+Take a chart paper and draw a number line from 0 to 20. Write the numbers clearly in a straight row.
+
+**Step 2: Make the Slider**
+
+Take a long paper strip, a little narrower than the number line. Cut a small window or slit in it to show one or two numbers at a time. Write plus and equal signs on the slider.
+
+**Step 3: Assemble**
+
+Place the slider strip over the number line and fix both sides with tape so it can move left and right. Make sure it slides smoothly.
+
+**Step 4: Try Adding**
+
+Keep the slider at the first number, for example 3. Now move the slider forward by the number you want to add, for example 4. The number showing in the window is your answer: **7**.
+
+**Step 5: Practice**
+
+Try these additions with your slide adding machine:
+- 2 + 5 = ?
+- 6 + 3 = ?
+- 10 + 4 = ?
+
+Slide and check your answers!
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When you move the strip forward, you are counting ahead on the number line. This helps you understand **addition as movement**.
+
+If you move backward, you are doing **subtraction**.
+
+This is the same principle used in early mechanical calculators and slide rules — tools that scientists and engineers used before electronic calculators were invented!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What happens when you slide to the right?'
+csq_options = [
+    'You add numbers (the result gets bigger)',
+    'You subtract numbers (the result gets smaller)',
+    'Nothing changes',
+    'The numbers disappear'
+]
+csq_soln = 'You add numbers (the result gets bigger)'
+csq_explanation = 'Sliding to the right moves you forward on the number line, which means you are adding. Each step to the right increases the number by 1, so sliding right by 4 steps adds 4 to your starting number.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How can you show subtraction using the slide adding machine?'
+csq_options = [
+    'Slide to the left (backward) instead of right',
+    'Use a different color marker',
+    'Turn the paper upside down',
+    'Subtraction cannot be shown'
+]
+csq_soln = 'Slide to the left (backward) instead of right'
+csq_explanation = 'Subtraction is the opposite of addition. Just like sliding right adds numbers, sliding left (backward) subtracts numbers. For example, to calculate 8 - 3, start at 8 and slide left by 3 steps to get 5.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'What is the answer when you slide from 9 by 3 steps to the right?<br/>'
+csq_soln = 12
+csq_explanation = 'Starting at 9 and sliding 3 steps to the right means 9 + 3 = 12. You count forward three numbers: 9 → 10 → 11 → 12.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why is sliding like counting on?'
+csq_options = [
+    'Because each step on the slider represents counting one more number forward',
+    'Because the slider makes noise when you count',
+    'Because you have to count the slides',
+    'Because counting and sliding are the same word'
+]
+csq_soln = 'Because each step on the slider represents counting one more number forward'
+csq_explanation = 'Sliding is like counting on because each position on the number line represents one number. When you slide forward by 4 steps, you are essentially counting "1, 2, 3, 4" forward from your starting position — just like counting on your fingers!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How does this activity help you learn place value?'
+csq_options = [
+    'It shows that numbers have positions on a line, and moving between positions changes the value',
+    'It teaches you to write numbers in different colors',
+    'It shows that all numbers are the same',
+    'It does not help with place value'
+]
+csq_soln = 'It shows that numbers have positions on a line, and moving between positions changes the value'
+csq_explanation = 'The slide adding machine demonstrates that numbers have specific positions. Each position represents a value, and moving between positions changes the value by a fixed amount. This is the foundation of place value — understanding that the position of a digit determines its value!'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'Using the slide adding machine, what is 7 + 8?<br/>'
+csq_soln = 15
+csq_explanation = 'Start at 7 on the number line, then slide 8 steps to the right: 7 → 8 → 9 → 10 → 11 → 12 → 13 → 14 → 15. The answer is 15!'
+</question>

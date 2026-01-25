@@ -1,0 +1,110 @@
+# Paper Enigma
+
+<catsoop-section>Introduction</catsoop-section>
+
+Have you ever thought about how all armies keep their messages secret? Also no one can know about that even if someone conveys the message? There is a tool named **Enigma** which helps us to do this. Enigma was invented by German engineer **Arthur Scherbius** in 1918. Here we will make an enigma using paper.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 2 printed A4 sheets
+- A cylinder with radius approximately 7.5 cm
+- Scissors
+- Glue
+
+<center>
+<img src="COURSE/representation/paper_enigma/paper_enigma_1.png" alt="Paper Enigma Materials 1" height="250"/>
+<img src="COURSE/representation/paper_enigma/paper_enigma_2.png" alt="Paper Enigma Materials 2" height="250"/>
+<img src="COURSE/representation/paper_enigma/paper_enigma_3.png" alt="Paper Enigma Materials 3" height="250"/>
+</center>
+<center>
+<img src="COURSE/representation/paper_enigma/paper_enigma_4.png" alt="Paper Enigma Materials 4" height="250"/>
+<img src="COURSE/representation/paper_enigma/paper_enigma_5.png" alt="Paper Enigma Materials 5" height="250"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Take two printouts in A4 size paper of the given sheet.
+
+2. Now cut out the strips: Reflector B, Rotor I, Rotor II, Rotor III, Input/Output and Reflector C, Rotor IV, Rotor V.
+
+3. Now take a cylinder and first take one of the strips from Reflector B or Reflector C and fold on a cylinder. Join their ends by glue. Don't fix it on the cylinder. Here we took a Reflector B strip.
+
+4. Now take any 3 strips from Rotor I to V and fold around the cylinder right to the reflector strip. Here we took Rotor I to III strips.
+
+5. At the right most side fold the Input/Output strip and join its end. Don't fix it.
+
+<center>
+<img src="COURSE/representation/paper_enigma/paper_enigma_6.png" alt="Paper Enigma Assembly" height="400"/>
+</center>
+
+6. Turn the reflector and Input/Output strip and confirm the grey line on them is aligned with each other.
+
+7. Set any message key on three Rotors. Let us take here A, B, C from left to right rotor by rotating them.
+
+8. Take any message say "CCL GANDHINAGAR". To encode this, take the first letter of our message 'C'. Now turn out one letter of the right most rotor towards yourself.
+
+9. Now find the Input C and see the line where it goes through rotors to reflectors and then back to Input/Output. Record the output.
+
+10. Rotate one letter towards you of the right most rotor for every input letter. If you get grey colour on the right most rotor then rotate the right most and middle rotor one letter towards you. If the letter on the middle rotor is shaded grey, turn all three rotors one step towards you.
+
+11. So CCL becomes **AUM**. Follow the rules and encrypt the whole message.
+
+12. Now decrypt the message using the same way.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Here every letter has a unique reflector path. By turning rotors, the same letter's encryption also would be changed. Again, turning rotors from the grey bar (notch) makes the encryption more complex.
+
+So the same letters in the message will not have the same reflection — therefore it will be unique. While decrypting the message we follow the same loop and we get the original message.
+
+This is similar to how the real Enigma machine worked during World War II. The Germans used it to send secret military messages, and it took brilliant mathematicians like **Alan Turing** to crack the code!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Encrypt your name as a message using keyword A,B,C. What is the first letter of the encrypted result? '
+csq_soln = 'encrypted letter'
+csq_check_function = lambda sub, sol: len(sub.strip()) >= 1 and sub.strip()[0].isalpha()
+csq_size = 10
+csq_explanation = 'Set the rotors to A, B, C from left to right. Then follow the encryption process: for each letter, find it on the Input/Output strip, trace the line through all rotors to the reflector and back, and record the output letter. Remember to rotate the rightmost rotor one step towards you after each letter!'
+</question>
+
+<question smallbox>
+csq_prompt = 'Decrypt the message "DYZAUJ" using keyword A,B,C. What is the original message? '
+csq_soln = 'ENIGMA'
+csq_check_function = lambda sub, sol: sub.strip().upper() == 'ENIGMA' or 'ENIGMA' in sub.upper()
+csq_size = 20
+csq_explanation = 'To decrypt, set the rotors to A, B, C and follow the same process as encryption. The beauty of the Enigma is that encryption and decryption use the same method! The decrypted message is "ENIGMA".'
+</question>
+
+<question smallbox>
+csq_prompt = 'Encrypt your school name with 4 rotors using keyword M,O,O,N. Describe what changes when using 4 rotors instead of 3: '
+csq_soln = 'more complex encryption'
+csq_check_function = lambda sub, sol: 'rotor' in sub.lower() or 'complex' in sub.lower() or 'secure' in sub.lower() or 'path' in sub.lower() or 'longer' in sub.lower() or '4' in sub or 'four' in sub.lower()
+csq_size = 50
+csq_explanation = 'With 4 rotors instead of 3, the encryption becomes more complex because: 1) The signal path is longer (through 4 rotors instead of 3), 2) There are more possible combinations of rotor positions, 3) The notch mechanism creates more stepping variations. This makes the code much harder to break!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Can you make your own enigma with two rotors?'
+csq_options = [
+    'Yes, but it would be less secure than the 3-rotor version',
+    'No, enigma must have exactly 3 rotors',
+    'Yes, and it would be more secure',
+    'No, you need at least 5 rotors'
+]
+csq_soln = 'Yes, but it would be less secure than the 3-rotor version'
+csq_explanation = 'Yes, you can make an enigma with 2 rotors! However, it would be less secure because: 1) Fewer rotors means fewer possible combinations, 2) The encryption pattern repeats more quickly, 3) It\'s easier for code-breakers to find patterns. The original Enigma used 3-4 rotors precisely to make it harder to crack!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why does the same letter encrypt to different letters at different positions in the message?'
+csq_options = [
+    'Because the rotors turn after each letter, changing the encryption path',
+    'Because we use different reflectors for each letter',
+    'Because the paper changes color',
+    'Because we use different keywords for each letter'
+]
+csq_soln = 'Because the rotors turn after each letter, changing the encryption path'
+csq_explanation = 'The rotors turn after encrypting each letter, which changes the internal wiring path. This means even if you type the same letter twice in a row, it will encrypt to different letters each time! This was one of the key features that made Enigma so difficult to break.'
+</question>

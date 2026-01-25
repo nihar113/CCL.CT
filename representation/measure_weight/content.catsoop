@@ -1,0 +1,53 @@
+# Measure Weight
+
+<catsoop-section>Introduction</catsoop-section>
+
+How do you check your weight? Obviously your teachers check in school. Or while doing a medical check up, or may be in machines where you have to insert 1 rs coin and it gives your weight. But have you ever try another method? Let's do it.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- A weighing scale
+- Weights of different grams with power of 4
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Place a thing which you wanna weigh on a scale.
+2. You are given hooks on scales to hang weights at different lengths 1, 2, 3, 4 units. We are given weights of 1 gm, 4 gm, 16g, 64 gm.
+3. Now put a thing on a scale which we want to weigh.
+4. On hook hang the weights from the farthest hook to closure and try to balance it.
+5. Note the coefficient. This is the weight of our thing with base 4.
+6. For decimal multiply the weight with length and add all results. That is the weight of our thing.
+
+<catsoop-subsection>Example: We are weighing 100 gm</catsoop-subsection>
+
+**Process:** First we select the maximum value of base and should not be greater than our weight that is 100. So it is $64 = 4^3$. We will hang 64 gm at distance 1. Now we add 16 two times. So we will put 16 at distance 2. The scale will still not be balanced. We need 4. So we will add 4 gm at distance 1 unit. Now we arrange the weights in decreasing order. So it will be:
+
+$$1 \cdot 64 + 2 \cdot 16 + 1 \cdot 4 + 0 \cdot 1$$
+
+$$= 1 \cdot 4^3 + 2 \cdot 4^2 + 1 \cdot 4^1 + 0 \cdot 4^0$$
+
+$$= (1210)_4$$
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Generally we use decimal system base 10. So for a hundred in decimal we have 100 only 1 time. So it is:
+
+$$1 \cdot 10^2 + 0 \cdot 10^1 + 0 \cdot 10^0$$
+
+$$= 100 + 0 + 0$$
+
+$$= 100$$
+
+In our weighing scale the length is the number of repetition of weight. That's why it will become the coefficient of our weights. As we calculate with base 4 we have only 4 numbers 0, 1, 2 and 3. So we have no coefficient greater than 3. By arranging them decreasing order we have:
+
+$$1 \cdot 64 + 2 \cdot 16 + 1 \cdot 4 + 0 \cdot 1$$
+
+$$= 1 \cdot 4^3 + 2 \cdot 4^2 + 1 \cdot 4^1 + 0 \cdot 4^0$$
+
+$$= (1210)_4$$
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+1. How will you denote 1 tola gold as base 4 system? Also know what the price of 1 tola gold is now.
+
+2. Take a spoon of sand. And weigh it base 10, 2, 3 and 4.

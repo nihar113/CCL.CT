@@ -1,0 +1,163 @@
+# Mirror Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+The aim of this puzzle is to make the image by using given puzzle pieces and their mirror reflections.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Mirror Box
+- 8 puzzle pieces
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_1.png" alt="Mirror Puzzle Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Take the mirror box and carefully open it.
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_2.png" alt="Step 1 - Open mirror box" height="250"/>
+</center>
+
+2. Place the mirrors in the center gap of the EVA sheet (as shown in the picture).
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_3.png" alt="Step 2 - Place mirrors" height="250"/>
+</center>
+
+3. Put any one puzzle piece in the mirror gap and see the reflected image.
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_4.png" alt="Step 3 - Place puzzle piece" height="250"/>
+</center>
+
+4. Try different pieces and observe how their reflection looks.
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_5.png" alt="Step 4 - Observe reflections" height="250"/>
+</center>
+
+5. Try to recreate the given designs using all the 8 puzzle pieces.
+
+6. You can rotate the pieces to make the required images.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+You are seeing the magic of **light reflection**!
+
+As you place puzzle pieces near the mirror, you will notice beautiful symmetrical images forming. This helps you understand how light reflects and how shapes and patterns behave when mirrored.
+
+**Key concepts:**
+- **Reflection** — Light bounces off the mirror surface
+- **Symmetry** — The reflected image is a mirror copy of the original
+- **Line of symmetry** — The mirror acts as a line of symmetry, creating two identical halves
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+**Q1.** Which of the following images cannot be obtained by only rotating this "L" shape?
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_6.png" alt="L-shape rotation question" height="300"/>
+</center>
+
+<question multiplechoice>
+csq_prompt = 'Which image CANNOT be obtained by only rotating the "L" shape (without flipping/mirroring)?'
+csq_options = [
+    'The mirror image (flipped L) — it requires reflection, not just rotation',
+    'L rotated 90° clockwise',
+    'L rotated 180°',
+    'L rotated 270° clockwise'
+]
+csq_soln = 'The mirror image (flipped L) — it requires reflection, not just rotation'
+csq_explanation = 'Rotation only spins a shape around a point — it cannot flip it. The mirror image of an "L" is different from any rotated version of the original L. To get a mirror image, you need reflection, which is what the mirror in this puzzle provides!'
+</question>
+
+<catsoop-subsection>Line of Symmetry</catsoop-subsection>
+
+A **line of symmetry** is an invisible line that splits a shape into two equal parts. When you fold the shape along this line, both sides look the same or overlap perfectly.
+
+*Or*
+
+A line of symmetry is like a mirror line. If you place a mirror on this line, one half of the shape will reflect exactly to make the other half. Both sides look the same, just like a mirror image.
+
+**Q2.** Is the line AB the line of symmetry of the given rectangle? Why or Why not?
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_7.png" alt="Rectangle symmetry question" height="250"/>
+</center>
+
+<question multiplechoice>
+csq_prompt = 'Is line AB the line of symmetry of the given rectangle?'
+csq_options = [
+    'It depends on where line AB is drawn — if it passes through the center horizontally or vertically, yes; if diagonal, no',
+    'Yes, always',
+    'No, never',
+    'Only if the rectangle is a square'
+]
+csq_soln = 'It depends on where line AB is drawn — if it passes through the center horizontally or vertically, yes; if diagonal, no'
+csq_explanation = 'A rectangle has exactly 2 lines of symmetry: one horizontal through the center and one vertical through the center. If line AB is drawn diagonally, it is NOT a line of symmetry because folding along a diagonal would not make both halves overlap perfectly (unless it\'s a square).'
+</question>
+
+**Q3.** The dotted line represents the position of the mirror. Complete the following figures.
+
+<center>
+<img src="COURSE/algorithms/mirror_puzzle/mirror_puzzle_8.png" alt="Mirror completion exercise" height="300"/>
+</center>
+
+<question smallbox>
+csq_prompt = 'When completing a figure with a mirror line, what rule must the reflected part follow? '
+csq_soln = 'each point must be the same distance from the mirror line'
+csq_check_function = lambda sub, sol: 'distance' in sub.lower() or 'same' in sub.lower() or 'equal' in sub.lower() or 'mirror' in sub.lower() or 'opposite' in sub.lower() or 'reflect' in sub.lower()
+csq_size = 50
+csq_explanation = 'When reflecting across a mirror line, each point on the original shape must have a corresponding point on the reflected shape that is: 1) The same distance from the mirror line, 2) On the opposite side of the mirror line, 3) Perpendicular to the mirror line. This creates a perfect mirror image!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Q4. Which of the given letters has a vertical line of symmetry?'
+csq_options = [
+    'A',
+    'B',
+    'E',
+    'F'
+]
+csq_soln = 'A'
+csq_explanation = 'The letter A has a vertical line of symmetry — if you draw a vertical line through its center, the left and right halves are mirror images. Letters B, E have horizontal symmetry (not vertical). Letter F has no line of symmetry at all.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Q5. How many lines of symmetry does a square have?'
+csq_options = [
+    '4',
+    '3',
+    '2',
+    '5'
+]
+csq_soln = '4'
+csq_explanation = 'A square has 4 lines of symmetry: 1) Vertical line through the center, 2) Horizontal line through the center, 3) Diagonal from top-left to bottom-right, 4) Diagonal from top-right to bottom-left. Each line divides the square into two identical halves.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Q6. Which of these has NO line of symmetry?'
+csq_options = [
+    'Scalene triangle',
+    'Equilateral triangle',
+    'Circle',
+    'Square'
+]
+csq_soln = 'Scalene triangle'
+csq_explanation = 'A scalene triangle has all sides of different lengths and all angles different — it has NO lines of symmetry. An equilateral triangle has 3 lines of symmetry, a square has 4, and a circle has infinite lines of symmetry!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Q7. A circle has how many lines of symmetry?'
+csq_options = [
+    'Infinite',
+    '2',
+    '8',
+    '10'
+]
+csq_soln = 'Infinite'
+csq_explanation = 'A circle has INFINITE lines of symmetry! Any line that passes through the center of a circle divides it into two identical halves. Since there are infinitely many such lines (at any angle), a circle has infinite lines of symmetry. This is what makes circles so special in geometry!'
+</question>

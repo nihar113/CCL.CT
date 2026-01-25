@@ -1,0 +1,101 @@
+# Gear Enigma
+
+<catsoop-section>Introduction</catsoop-section>
+
+Have you ever thought about how the army or spies send messages without leaking any information? If you have heard or seen it in movies then you know that one team replaces the letters of the sentence with another. This process is called **encryption** and the other team converts the letters to original letters and gets the original message, which is known as **decryption**. To make this process faster there is a machine known as **Enigma**.
+
+The word "enigma" comes from the ancient Greek word *ainigma*, which means "riddle" or "obscure utterance". It evolved through the Latin word *aenigma* before entering the English language in the late 16th century. Here we will do the same process with the help of gears.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- A set of three different number of spoked gears, each tooth is labelled with capital letters
+
+<center>
+<img src="COURSE/representation/gear_enigma_1/gear_enigma_1_1.png" alt="Gear Enigma Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. First set gears on the given flat surface such that 7-6-5 spoked gears are arranged left to right.
+
+2. Now set letters of tooth such that 7 spoked gear gets letter D, 6 spoked gear gets the letter O, 5 spoked gear gets the letter G at marked lines. This is **7-6-5 DOG**.
+
+3. Now write a message on a paper. Let's say "Centre for creativity" and we will encrypt these words on our gear enigma.
+
+4. First divide the given message in 4-4 words. So our words will be 'CENT REFO RCRE ATIV ITY'. If the message is not equally divided in 4 words then add a sequence of characters to the end of the last block to fill it complete. So our message will be **CENT REFO RCRE ATIV ITYZ** (as Z comes after Y in alphabets).
+
+5. First rotate 5 spoked gear so that its tooth meeting at the marked line gets the letter C.
+
+6. Now see the resultant tooth at the marked line of 7 spoked gear — that is **H**.
+
+7. Encrypt another letter of our message 'E'. This time we will see the encrypted letter on 6 spoked gear and we will get the letter **P**.
+
+8. Thus continue this process by encrypting letters on 7 spoked gear and 6 spoked gear alternatively.
+
+9. So we will get **HPWA SPEH …**
+
+10. To decrypt this message, first use the 7 spoked gear's tooth's letter at marked line and see which letter we will get on 5 spoked gear's tooth at marked line. Then use 6 spoked gear's letter. Do this process alternatively with 7 and 6 spoked gears. And see the decrypted message.
+
+Have you decrypted the message? Ahey! You are the decoder!
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Here we have three gears with 26 teeth. The 5 spoked gear's teeth contain capital alphabets in clockwise direction while 7 spoked gear's teeth contain alphabets in anticlockwise direction. The middle one (6 spoked gear) teeth contain alphabets alternatively — that is BACEDFHG… in clockwise direction.
+
+As we rotate 5 spoked gear clockwise, the middle one (6 spoked gear) rotates anticlockwise. And hence the 7 spoked gear will rotate clockwise and vice versa.
+
+As we set our gear at keyword **7-6-5 DOG**, alphabets are set in this way as shown in the image. Also, as we divide our message in 4-4 blocks, our encrypted message is on 7-6-7-6 spoked gear pattern. So it becomes easier to decrypt our message.
+
+<center>
+<img src="COURSE/representation/gear_enigma_1/gear_enigma_1_2.png" alt="Gear Enigma Explanation" height="200"/>
+</center>
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Fix the keyword 7-6-5 SER and encrypt the word "HELLO". What do you get? '
+csq_soln = 'encrypted message'
+csq_check_function = lambda sub, sol: len(sub.strip()) >= 4 and sub.strip().isalpha()
+csq_size = 20
+csq_explanation = 'Using the keyword 7-6-5 SER, set the gears so that S is on the 7-spoked gear, E is on the 6-spoked gear, and R is on the 5-spoked gear at the marked lines. Then encrypt each letter of HELLO by rotating the 5-spoked gear and reading alternately from 7 and 6 spoked gears.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Decrypt the message "QMFD FCQA BIFA VCQU SABC WHNX" using the 7-6-5 DOG keyword. What is the original message? '
+csq_soln = 'CENTRE FOR CREATIVITY'
+csq_check_function = lambda sub, sol: 'CENT' in sub.upper() or 'CREAT' in sub.upper() or 'CENTRE' in sub.upper()
+csq_size = 40
+csq_explanation = 'To decrypt, set the gears to 7-6-5 DOG. Then for each encrypted letter, find it on the 7 or 6 spoked gear (alternating) and read the corresponding letter on the 5 spoked gear. The decrypted message reveals the original text!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Can you make your own gear enigma by changing the pattern of given gears?'
+csq_options = [
+    'Yes, by rearranging the alphabet order on the gears or changing the gear arrangement',
+    'No, the pattern is fixed and cannot be changed',
+    'Only if you have exactly 26 teeth on each gear',
+    'Only computer scientists can do this'
+]
+csq_soln = 'Yes, by rearranging the alphabet order on the gears or changing the gear arrangement'
+csq_explanation = 'You can create your own gear enigma by: 1) Changing the order of alphabets on the gear teeth, 2) Changing the arrangement of gears (e.g., 5-6-7 instead of 7-6-5), 3) Using different keywords, or 4) Adding more gears. Each variation creates a different encryption pattern!'
+</question>
+
+<question smallbox>
+csq_prompt = 'If you add an extra gear with 8 spokes and make keyword 8-7-6-5, how would the encryption pattern change? Describe briefly: '
+csq_soln = 'more complex encryption with 4 gears'
+csq_check_function = lambda sub, sol: 'gear' in sub.lower() or 'complex' in sub.lower() or '4' in sub or 'four' in sub.lower() or 'secure' in sub.lower() or 'pattern' in sub.lower()
+csq_size = 50
+csq_explanation = 'Adding a 4th gear (8-spoked) would create a more complex encryption system. Instead of alternating between 2 output gears (7 and 6), you would now cycle through 3 output gears (8, 7, and 6) while inputting on the 5-spoked gear. This creates a longer pattern cycle (8-7-6-8-7-6...) making the encryption harder to break!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why do we divide the message into blocks of 4 letters?'
+csq_options = [
+    'Because we alternate between 7 and 6 spoked gears, creating a pattern that repeats every 2 letters, and blocks of 4 help organize the encryption',
+    'Because the gears can only handle 4 letters',
+    'Because all words have exactly 4 letters',
+    'Because computers only understand 4-letter words'
+]
+csq_soln = 'Because we alternate between 7 and 6 spoked gears, creating a pattern that repeats every 2 letters, and blocks of 4 help organize the encryption'
+csq_explanation = 'Dividing into 4-letter blocks helps organize the encryption process. Since we alternate between the 7 and 6 spoked gears (pattern: 7-6-7-6), each block of 4 letters completes two full cycles of this pattern. This makes both encryption and decryption more systematic and easier to track.'
+</question>

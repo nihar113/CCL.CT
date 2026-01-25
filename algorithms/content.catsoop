@@ -1,0 +1,115 @@
+# Module 2: Algorithms
+
+**Algorithms** are step-by-step procedures for solving problems. They are the heart of computational thinking—precise instructions that transform inputs into desired outputs. Every time you follow a recipe, give directions, or explain how to do something, you are using algorithmic thinking.
+
+In this module, you'll explore algorithms through hands-on activities that make abstract concepts tangible. You'll discover how computers search for information, sort data efficiently, and solve complex puzzles through systematic approaches.
+
+Understanding algorithms helps us:
+- Break down complex problems into manageable steps
+- Find efficient solutions to everyday challenges
+- Recognize patterns and optimize our approaches
+- Think systematically about problem-solving
+
+---
+
+## Searching and Sorting
+
+Activities exploring how to find and organize information efficiently:
+
+- [Khota Sikka](CURRENT/khota_sikka) — Find the counterfeit coin using the classic weighing puzzle and binary search principles
+- [Sorting Network](CURRENT/sorting_network) — Experience parallel sorting through physical comparison networks
+- [Punched Cards (A-Z)](CURRENT/punched_cards_az) — Sort letters using punched card techniques in Base-2 and Base-3
+- [Punched Cards (0-32)](CURRENT/punched_cards_032) — Sort numbers using punched cards in Base-10
+- [Punched Cards (Ramayan)](CURRENT/punched_cards_ramayan) — Sequence story elements using punched cards in Base-2 and Base-3
+- [Punched Cards (Magic)](CURRENT/punched_cards_magic) — Discover the magic of binary search through a card trick
+
+---
+
+## Algorithmic Thinking and Combinatorics
+
+Activities exploring systematic problem-solving, logical reasoning, and game strategy:
+
+### Mazes and Puzzles
+
+- [Mazes: No-Left Turn](CURRENT/maze_no_left) — Navigate mazes with turning restrictions to understand constrained algorithms
+- [Mazes: Kudam Kudi](CURRENT/maze_kudam_kudi) — Explore the traditional Indian pot-and-coin maze game
+- [Edge-Matching Puzzles: Triangle](CURRENT/edge_match_triangle) — Match edges on triangular tiles to complete patterns
+- [Edge-Matching Puzzles: Square](CURRENT/edge_match_square) — Match edges on square tiles to complete patterns
+- [See and Solve Booklet](CURRENT/see_and_solve) — Visual problem-solving exercises for pattern recognition
+- [Truchet Cube](CURRENT/truchet_cube) — Create patterns using Truchet tiles and explore combinatorial possibilities
+- [Flexagon Maze](CURRENT/flexagon_maze) — Navigate through folding paper structures that reveal hidden paths
+- [Mirror Puzzle](CURRENT/mirror_puzzle) — Solve puzzles using reflection and symmetry principles
+
+### Logic and Strategy Puzzles
+
+- [Chota Shatranj](CURRENT/chota_shatranj) — Play simplified chess to develop strategic algorithmic thinking
+- [Skyscraper](CURRENT/skyscraper) — Solve logic puzzles using building height constraints
+- [Stack-it Up](CURRENT/stack_it_up) — Solve stacking puzzles with ordering constraints
+- [Up-it-Up](CURRENT/up_it_up) — Build incrementally following specific rules
+- [Three Jugs Problem](CURRENT/three_jugs) — Solve the classic water measurement puzzle through state-space search
+- [Dijkstra's Algorithm](CURRENT/dijkstra_chain_map) — Find shortest paths using chain and map visualization
+- [Confusing Clocks](CURRENT/confusing_clocks) — Solve time-based puzzles with modular arithmetic
+- [Panchang Paheli](CURRENT/panchang_paheli) — Explore calendar calculations and traditional Indian astronomical algorithms
+
+### Strategy Games
+
+- [Game: Peg Solitaire](CURRENT/game_peg_solitaire) — Solve the classic jumping puzzle through systematic exploration
+
+---
+
+## Optimization
+
+Activities exploring how to find the best solutions among many possibilities:
+
+### Minimal Networks (Soap Film Computers)
+
+Soap films naturally find minimal surfaces—the shortest network connecting points. These activities use soap films to solve optimization problems that challenge even modern computers!
+
+- [Soap: 4-Point](CURRENT/soap_4point) — Find the shortest network connecting 4 points using soap film
+- [Soap: 5-Point](CURRENT/soap_5point) — Explore minimal Steiner trees with 5 points
+- [Soap: Grid](CURRENT/soap_grid) — Discover minimal networks on grid arrangements
+- [Soap: Metro](CURRENT/soap_metro) — Optimize metro/subway network connections using soap films
+
+### Graph Coloring
+
+- [Solid Face Colouring](CURRENT/solid_face_coloring) — Color the faces of 3D solids with minimum colors so no adjacent faces match
+- [Solid Edge Colouring](CURRENT/solid_edge_coloring) — Color the edges of 3D solids with minimum colors so no edges sharing a vertex match
+
+---
+
+## Arts and Mathematical Explorations
+
+Activities exploring the intersection of algorithms, art, and mathematics:
+
+### Algorithmic Art
+
+- [Hitomezashi Art](CURRENT/hitomezashi_art) — Create beautiful geometric patterns using binary sequences and simple stitching rules
+- [String Art](CURRENT/string_art) — Generate stunning curves from straight lines using mathematical principles
+- [Spirograph](CURRENT/spirograph) — Create intricate patterns using rotating circles and algorithmic drawing
+
+### Geometry and Topology
+
+- [Platonic Solid Booklet](CURRENT/platonic_solid) — Construct and explore the five regular polyhedra
+- [Single Cut](CURRENT/single_cut) — Fold paper so one straight cut creates any polygon—the fold-and-cut theorem
+- [Manifold Booklet](CURRENT/manifold_booklet) — Explore surfaces, topology, and mathematical paper folding
+
+### Music and Patterns
+
+- [Aarohan-Avrohan](CURRENT/aarohan_avrohan) — Explore ascending and descending patterns in Indian classical music through algorithms
+
+---
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Understand what algorithms are and recognize them in everyday life
+* Apply searching techniques like binary search to find items efficiently
+* Use sorting algorithms to organize data systematically
+* Solve puzzles through systematic exploration of possibilities
+* Analyze games and develop winning strategies using algorithmic thinking
+* Recognize the role of constraints in algorithm design
+* Understand optimization problems and how nature finds minimal solutions
+* Apply graph coloring concepts to real-world scheduling and mapping problems
+* Create algorithmic art using mathematical rules and patterns
+* Explore the connections between geometry, topology, and computation

@@ -1,0 +1,169 @@
+<python>
+import catsoop.cslog as cslog
+import os
+import re
+
+# Define all exercises with their paths and names
+# Format: (module_path, activity_path, activity_name)
+exercises = [
+    # Module 1: Representation
+    ('representation', 'measure_height', 'Measure Height'),
+    ('representation', 'binary_counter', 'Binary Counter'),
+    ('representation', 'tiles_art', 'Tiles Art'),
+    ('representation', 'golomb_ruler', 'Golomb Ruler'),
+    ('representation', 'flip_trick', 'Flip Trick'),
+    ('representation', 'diy_qr_code', 'DIY QR Code'),
+    ('representation', 'scytale', 'Scytale'),
+    ('representation', 'gear_enigma_1', 'Gear Enigma 1'),
+    ('representation', 'paper_enigma', 'Paper Enigma'),
+
+    # Module 2: Algorithms
+    ('algorithms', 'khota_sikka', 'Khota Sikka'),
+    ('algorithms', 'sorting_network', 'Sorting Network'),
+    ('algorithms', 'punched_cards_az', 'Punched Cards A-Z'),
+    ('algorithms', 'punched_cards_032', 'Punched Cards 0-32'),
+    ('algorithms', 'punched_cards_ramayan', 'Punched Cards Ramayan'),
+    ('algorithms', 'maze_no_left', 'Maze No Left'),
+    ('algorithms', 'maze_kudam_kudi', 'Maze Kudam Kudi'),
+    ('algorithms', 'edge_match_triangle', 'Edge Match Triangle'),
+    ('algorithms', 'edge_match_square', 'Edge Match Square'),
+    ('algorithms', 'chota_shatranj', 'Chota Shatranj'),
+    ('algorithms', 'skyscraper', 'Skyscraper'),
+    ('algorithms', 'up_it_up', 'Up It Up'),
+    ('algorithms', 'panchang_paheli', 'Panchang Paheli'),
+    ('algorithms', 'mirror_puzzle', 'Mirror Puzzle'),
+
+    # Module 4: Architecture
+    ('architecture', 'slide_adding_machine', 'Slide Adding Machine'),
+    ('architecture', 'paper_computer', 'Paper Computer'),
+    ('architecture', 'domino_computer', 'Domino Computer'),
+    ('architecture', 'pulley_computer', 'Pulley Computer'),
+]
+
+def count_questions_in_exercise(module_path, activity_path):
+    """Count total number of questions in an exercise by reading the file"""
+    course_root = os.path.join(cs_data_root, 'courses', cs_course)
+    file_path = os.path.join(course_root, module_path, activity_path, 'content.catsoop')
+
+    if not os.path.exists(file_path):
+        return 0
+
+    try:
+        with open(file_path, 'r') as f:
+            content = f.read()
+
+        # Count <question> tags (matches <question pythonliteral>, <question multiplechoice>, etc.)
+        question_count = len(re.findall(r'<question\s+\w+>', content))
+        return question_count
+    except:
+        return 0
+
+def get_exercise_status(module_path, activity_path):
+    """Get the submission status for an exercise"""
+    path = [cs_course, module_path, activity_path]
+
+    logs = cslog.most_recent(
+        cs_username,
+        path,
+        'problemstate',
+        {}
+    )
+
+    if not logs:
+        return None
+
+    scores = logs.get('scores', {})
+    filtered_scores = {k: v for k, v in scores.items() if not k.startswith('_')}
+
+    return filtered_scores
+
+def calculate_stats(scores, total_questions):
+    """Calculate correct/attempted/total questions"""
+    if scores is None:
+        attempted = 0
+        correct = 0
+    else:
+        attempted = len(scores)
+        correct = sum(1 for score in scores.values() if score >= 1.0)
+
+    return correct, attempted, total_questions
+</python>
+
+<div style="max-width: 1000px; margin: 20px auto;">
+
+<p>Track your progress across all course modules and activities.</p>
+
+<python>
+# Generate the progress table
+print('<table border="1" style="width: 100%; border-collapse: collapse; margin: 20px 0;">')
+print('<thead>')
+print('<tr style="background-color: #0077B6; color: white;">')
+print('<th style="padding: 12px; text-align: left;">Activity</th>')
+print('<th style="padding: 12px; text-align: center;">Module</th>')
+print('<th style="padding: 12px; text-align: center;">Status</th>')
+print('<th style="padding: 12px; text-align: center;">Correct</th>')
+print('<th style="padding: 12px; text-align: center;">Attempted</th>')
+print('<th style="padding: 12px; text-align: center;">Total</th>')
+print('<th style="padding: 12px; text-align: center;">Score</th>')
+print('</tr>')
+print('</thead>')
+print('<tbody>')
+
+current_module = None
+for module_path, activity_path, activity_name in exercises:
+    total_questions = count_questions_in_exercise(module_path, activity_path)
+    scores = get_exercise_status(module_path, activity_path)
+    correct, attempted, total = calculate_stats(scores, total_questions)
+
+    # Module name formatting
+    module_display = module_path.replace('_', ' ').title()
+
+    # Determine status and styling
+    if total == 0:
+        status = '○ No Questions'
+        bg_color = '#f8f9fa'
+        correct_text = '0'
+        attempted_text = '0'
+        total_text = '0'
+        avg_score = '-'
+    elif scores is None or attempted == 0:
+        status = '○ Not Started'
+        bg_color = '#f8f9fa'
+        correct_text = '0'
+        attempted_text = '0'
+        total_text = str(total)
+        avg_score = '-'
+    else:
+        correct_text = str(correct)
+        attempted_text = str(attempted)
+        total_text = str(total)
+
+        avg_score_num = correct / total if total > 0 else 0
+        avg_score = f'{avg_score_num * 100:.0f}%'
+
+        if correct == total:
+            status = '✓ Complete'
+            bg_color = '#d4edda'
+        elif correct > 0:
+            status = '◐ In Progress'
+            bg_color = '#fff3cd'
+        else:
+            status = '◔ Started'
+            bg_color = '#f8d7da'
+
+    # Print row
+    print(f'<tr style="background-color: {bg_color};">')
+    print(f'<td style="padding: 10px;"><a href="{module_path}/{activity_path}" style="color: #0066cc; text-decoration: none;">{activity_name}</a></td>')
+    print(f'<td style="padding: 10px; text-align: center;">{module_display}</td>')
+    print(f'<td style="padding: 10px; text-align: center; font-weight: bold;">{status}</td>')
+    print(f'<td style="padding: 10px; text-align: center;">{correct_text}</td>')
+    print(f'<td style="padding: 10px; text-align: center;">{attempted_text}</td>')
+    print(f'<td style="padding: 10px; text-align: center;">{total_text}</td>')
+    print(f'<td style="padding: 10px; text-align: center; font-weight: bold;">{avg_score}</td>')
+    print('</tr>')
+
+print('</tbody>')
+print('</table>')
+</python>
+
+</div>

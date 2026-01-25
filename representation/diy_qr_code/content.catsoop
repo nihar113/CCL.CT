@@ -1,0 +1,124 @@
+# DIY QR Code — Build Your Own Secret Scanner
+
+<catsoop-section>Introduction</catsoop-section>
+
+You see QR codes everywhere — on chocolates, books, tickets, and even in your school projects! A QR code is a special picture that stores information. When you scan it with your phone, it shows a message, link, or name. In this activity, you will make your own QR code using squares and learn how computers read black and white patterns just like they read 0s and 1s (binary numbers).
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Graph paper or chart paper with squares
+- Black sketch pen or marker
+- Pencil and eraser
+- Scale (ruler)
+- A small message to hide (like your name or "HELLO")
+- (Optional) Mobile QR code scanner
+
+<catsoop-section>Instructions</catsoop-section>
+
+<center>
+<img src="COURSE/representation/diy_qr_code/diy_qr_code_1.png" alt="DIY QR Code Instructions" height="400"/>
+</center>
+
+**Step 1: Draw the Base Grid**
+
+Take a clean A4 chart paper. Use a ruler and pencil to draw a 10 × 10 square grid (each box about 1 cm × 1 cm). This grid is like the "computer screen" where each tiny box stores data (0 or 1).
+
+**Step 2: Mark the Position Squares**
+
+In three corners, draw large black squares. These are called **position markers** — they help the scanner know where to start reading. Leave the rest of the grid empty for now.
+
+**Step 3: Create Your Secret Pattern**
+
+Decide what you want your QR to say — for example: "HI", "123", or your name initials. Now fill small boxes using a black marker for 1 and keep others white for 0. You're now encoding your message in binary form, just like a computer!
+
+For example:
+- H = 01001000
+- I = 01001001
+
+**Step 4: Make It Strong**
+
+Paste the chart onto a thick cardboard sheet so it won't bend or tear while you work or display it.
+
+**Step 5: Compare with a Real QR Code**
+
+Go online and make a digital QR using a free QR Code Generator. Look closely — both your handmade and digital codes have the same corner squares and black-white patterns. You just made a physical version of digital data!
+
+**Step 6: Scan and Decode**
+
+Open a QR Code scanner or use your phone camera. Scan your handmade QR or the digital one. Watch how your phone instantly recognizes and decodes the pattern into words or numbers.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+You made your own mini computer language picture! Each black and white box shows a **bit** of information (1 or 0). Computers read these small bits to understand what message is hidden inside.
+
+That's how a QR code stores data and lets your phone show it again. So now you know — QR codes are not magic, they're math and logic made visible!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What is a QR code used for?'
+csq_options = [
+    'To store and share information like links, text, or numbers',
+    'To make pictures look fancy',
+    'To play music',
+    'To charge your phone'
+]
+csq_soln = 'To store and share information like links, text, or numbers'
+csq_explanation = 'A QR code is used to store and share information. When scanned, it can reveal text, website links, phone numbers, or other data. It\'s like a barcode, but can store much more information!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What do black and white squares mean in a QR code?'
+csq_options = [
+    'Black = 1 (ON) and White = 0 (OFF) — binary data',
+    'Black = letters and White = numbers',
+    'They are just for decoration',
+    'Black = start and White = stop'
+]
+csq_soln = 'Black = 1 (ON) and White = 0 (OFF) — binary data'
+csq_explanation = 'In a QR code, black squares represent 1 (ON) and white squares represent 0 (OFF). This is binary data — the same language that computers use to store all information!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What are the big boxes in the corners called?'
+csq_options = [
+    'Position markers (or finder patterns)',
+    'Data boxes',
+    'Color codes',
+    'End markers'
+]
+csq_soln = 'Position markers (or finder patterns)'
+csq_explanation = 'The large squares in three corners of a QR code are called position markers or finder patterns. They help the scanner quickly locate and orient the QR code, so it can be read from any angle!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is a QR code like computer language?'
+csq_options = [
+    'Both use binary (0s and 1s) to represent information',
+    'Both need electricity to work',
+    'Both are made of metal',
+    'Both can only store numbers'
+]
+csq_soln = 'Both use binary (0s and 1s) to represent information'
+csq_explanation = 'QR codes and computer language both use binary — a system of 0s and 1s — to represent information. In a QR code, this is shown visually as white (0) and black (1) squares. Computers store everything (text, images, videos) the same way!'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you make a QR code for your best friend\'s name? Write their first initial and its binary code (e.g., A = 01000001): '
+csq_soln = 'A = 01000001'
+csq_check_function = lambda sub, sol: '0' in sub and '1' in sub and len([c for c in sub if c in '01']) >= 7
+csq_size = 30
+csq_explanation = '''Here are some common letters in binary (ASCII):
+- A = 01000001
+- B = 01000010
+- C = 01000011
+- D = 01000100
+- E = 01000101
+- F = 01000110
+- G = 01000111
+- H = 01001000
+- I = 01001001
+- J = 01001010
+
+You can use these binary codes to create your own QR code pattern!'''
+</question>

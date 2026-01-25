@@ -1,0 +1,75 @@
+# Module 1: Representation
+
+**Representation** is a fundamental concept in computational thinking that addresses how we encode and store information in a way that computers can process. Every piece of data—whether it's a number, a letter, an image, or a sound—must be converted into a format that machines can understand and manipulate.
+
+In this module, you'll explore different ways that information can be represented digitally. You'll discover how simple measurements can be encoded, how images are built from tiny units of color, how different number systems allow us to express quantities in various bases, and how information can be protected through error detection and encryption.
+
+Understanding representation helps us:
+- See the connection between the physical world and digital data
+- Appreciate how computers "think" about information
+- Build intuition for encoding and decoding data
+- Understand how data can be protected and secured
+
+---
+
+## Data Representation
+
+Activities exploring how data is measured and encoded:
+
+- [Measure Height](CURRENT/measure_height) — Learn how physical measurements are captured and represented numerically
+- [Measure Weight](CURRENT/measure_weight) — Explore weight measurement and data encoding
+- [Golomb Ruler](CURRENT/golomb_ruler) — Discover efficient ways to represent measurement intervals
+- [Binary Counter](CURRENT/binary_counter) — Experience counting in binary using physical representations
+
+---
+
+## Image Representation
+
+Activities exploring how images are represented digitally:
+
+- [300 Tiles Art](CURRENT/tiles_art) — Create art using a grid of colored tiles to understand pixel-based images
+- [Other Pixel Arts](CURRENT/pixel_arts) — Explore stereographic projection, bindi art, and pushpin art as pixel representations
+- [RGB Model & Orbeez Ball](CURRENT/rgb_orbeez) — Understand how colors are mixed using the RGB color model
+
+---
+
+## Number Base Conversion
+
+Activities exploring different number systems:
+
+- [Gear Dabba](CURRENT/gear_dabba) — Use mechanical gears to understand place value and number base conversion
+
+---
+
+## Error Detection and Correction
+
+Activities exploring how errors in data can be detected and fixed:
+
+- [Flip Trick](CURRENT/flip_trick) — Discover parity bits and error detection through a magical card-flipping trick
+
+---
+
+## Encryption
+
+Activities exploring how information can be encoded for secrecy:
+
+- [DIY QR Code](CURRENT/diy_qr_code) — Build QR codes by hand to understand how data is encoded in 2D patterns
+- [Scytale](CURRENT/scytale) — Use the ancient Greek transposition cipher with a cylindrical tool
+- [Gear Enigma - 1 (Easy)](CURRENT/gear_enigma_1) — Build a simple gear-based encryption machine
+- [Gear Enigma - 2 (Hard)](CURRENT/gear_enigma_2) — Create an advanced gear-based cipher system
+- [Enigma 26](CURRENT/enigma_26) — Explore the famous Enigma machine cipher with 26 letters
+- [Paper Enigma](CURRENT/paper_enigma) — Simulate the Enigma machine using paper wheels
+- [Hitomezashi Art](CURRENT/hitomezashi_art) — Create beautiful patterns while exploring binary sequences and encryption
+
+---
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Understand how physical measurements are encoded as digital data
+* Explain how digital images are composed of pixels and color values
+* Convert between different number bases (binary, decimal, hexadecimal)
+* Recognize representation as a key step in computational problem-solving
+* Understand how parity bits detect errors in data transmission
+* Explore classical and modern encryption techniques

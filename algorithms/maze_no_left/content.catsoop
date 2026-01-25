@@ -1,0 +1,97 @@
+# No Left Turn – Level 1
+
+<center>
+<img src="COURSE/algorithms/maze_no_left/maze_no_left_1.png" alt="No Left Turn Game Board" height="500"/>
+</center>
+
+<catsoop-section>Introduction</catsoop-section>
+
+"No Left Turn – Level 1" is a logic and navigation-based puzzle game where players must find a path from Tom (the cat) to Jerry (the mouse) without ever making a left turn at any intersection. This game promotes spatial reasoning, decision-making, and logical thinking in a fun and engaging format.
+
+Help Tom reach Jerry by navigating through a grid without making any left turns.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- A No Left Turn Game Board
+
+<catsoop-section>Instructions</catsoop-section>
+
+**Rules**
+
+1. **No Left Turns:** At every intersection (turning point), you can either go straight or turn right.
+2. **No backtracking** is allowed once a direction is chosen.
+3. You must start at Tom's position and end at Jerry's position.
+4. The entire path must comply with the "no left turn" rule from start to finish.
+
+**How to Play**
+
+1. The game board is placed on the ground or projected on a surface.
+2. One player (or team) acts as Tom and tries to trace or walk the valid path to Jerry.
+3. Stand at the starting position (Tom's location).
+4. Begin navigating through the grid by choosing only valid moves (straight or right).
+5. At each turn/intersection, pause and think before proceeding. Remember, **left is not an option**.
+6. Reach Jerry's location using only valid turns.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+This puzzle demonstrates **constrained path finding** — a fundamental concept in computer science. Computers often need to find paths with restrictions, just like:
+
+- **GPS navigation** avoiding certain roads or making only legal turns
+- **Robot movement** with physical constraints on turning
+- **Network routing** where data packets can only travel certain directions
+
+By limiting your choices (no left turns), you must think ahead and plan your route carefully. This is similar to how algorithms work — they follow strict rules to find solutions efficiently.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Design your own puzzle: Make a game where players go from start to end without making any RIGHT turns. What would be the allowed moves? '
+csq_soln = 'straight and left only'
+csq_check_function = lambda sub, sol: 'straight' in sub.lower() or 'left' in sub.lower() or 'forward' in sub.lower()
+csq_size = 40
+csq_explanation = 'In a "No Right Turn" puzzle, the allowed moves would be: Go Straight and Turn Left only. This is the mirror opposite of our "No Left Turn" game. You would need to design the maze so that a valid path exists using only these moves!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why is the "No Left Turn" rule useful for learning computational thinking?'
+csq_options = [
+    'It teaches us to solve problems within constraints, just like computer algorithms',
+    'It makes the game easier',
+    'Left turns are dangerous',
+    'Computers cannot turn left'
+]
+csq_soln = 'It teaches us to solve problems within constraints, just like computer algorithms'
+csq_explanation = 'The "No Left Turn" constraint teaches us to think algorithmically — finding solutions while following strict rules. Real-world algorithms always have constraints (memory limits, time limits, valid operations), and learning to work within constraints is a key computational thinking skill.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'At an intersection, what are your valid choices in this game?'
+csq_options = [
+    'Go straight or turn right only',
+    'Turn left or turn right',
+    'Go straight only',
+    'Any direction is allowed'
+]
+csq_soln = 'Go straight or turn right only'
+csq_explanation = 'In the "No Left Turn" game, at every intersection you can only: 1) Go straight (continue in your current direction), or 2) Turn right. Left turns are never allowed, and backtracking (turning around) is also not permitted.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What real-world application uses similar "no left turn" rules?'
+csq_options = [
+    'UPS delivery trucks — they minimize left turns to save fuel and time',
+    'Airplanes — they can only turn right',
+    'Trains — they cannot turn left',
+    'There are no real-world applications'
+]
+csq_soln = 'UPS delivery trucks — they minimize left turns to save fuel and time'
+csq_explanation = 'UPS famously uses a "no left turn" policy for their delivery trucks! By avoiding left turns (which require waiting for oncoming traffic), they save millions of gallons of fuel and reduce accidents. This is a real-world example of constrained optimization — finding efficient solutions within limitations.'
+</question>
+
+<question smallbox>
+csq_prompt = 'If you are facing North and need to go West, how many right turns do you need to make? '
+csq_soln = '3'
+csq_check_function = lambda sub, sol: sub.strip() == '3' or 'three' in sub.lower()
+csq_size = 5
+csq_explanation = 'If you are facing North and need to go West, you cannot turn left (which would be one turn). Instead, you need to turn right three times: North → East (1st right) → South (2nd right) → West (3rd right). This shows how constraints can make paths longer but still achievable!'
+</question>

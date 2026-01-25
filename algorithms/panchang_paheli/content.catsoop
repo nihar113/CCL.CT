@@ -1,0 +1,115 @@
+# Panchang Paheli (Calendar Puzzle)
+
+<catsoop-section>Introduction</catsoop-section>
+
+Imagine your calendar turning into a playground, where each day brings a new challenge to uncover the date! Prepare to stretch your brain, conquer each day's puzzle, and uncover the hidden magic within these pieces. Let the polyomino adventure begin!
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Pentomino Puzzle Pieces
+- Calendar Grid
+
+<center>
+<img src="COURSE/algorithms/panchang_paheli/panchang_paheli_1.png" alt="Panchang Paheli Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+<center>
+<img src="COURSE/algorithms/panchang_paheli/panchang_paheli_2.png" alt="Panchang Paheli Instructions" height="400"/>
+</center>
+
+1. Take any 6 (out of the given 7) puzzle pieces and try to cover the entire calendar grid, except for today's date. If you aren't able to do it, try with a different set of 6 pieces.
+
+2. Every puzzle piece is made up of five connected squares, each in a different arrangement. Such an arrangement of five squares connected edge to edge is called a **pentomino**.
+
+3. The six pentomino pieces would cover 6 × 5 = 30 square grids, leaving only the desired date visible.
+
+<center>
+<img src="COURSE/algorithms/panchang_paheli/panchang_paheli_3.png" alt="Panchang Paheli Example" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+**Polyominoes** are fascinating geometric shapes made by connecting squares edge-to-edge. They come in different sizes, starting from the simplest—dominoes—to more complex shapes like hexominoes. Let's explore these shapes and discover the beauty of mathematics through them!
+
+**1. Dominoes (2 Squares)**
+
+A domino is the simplest polyomino, made up of just two squares connected along one side. There's only **1 unique domino**.
+
+**2. Trominoes (3 Squares)**
+
+Trominoes are formed by connecting three squares. They come in **2 different shapes** (I-shape and L-shape).
+
+**3. Tetrominoes (4 Squares)**
+
+Tetrominoes are made by joining four squares. These shapes are famous from the game **Tetris**! There are **5 unique tetrominoes**.
+
+**4. Pentominoes (5 Squares)**
+
+Pentominoes are created by linking five squares. There are **12 different pentomino shapes**.
+
+**5. Hexominoes (6 Squares)**
+
+Hexominoes are made by connecting six squares. These shapes start to get more complex, with **35 unique configurations**.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question pythonliteral>
+csq_prompt = 'How many unique pentomino shapes exist (5 squares connected edge-to-edge)?<br/>'
+csq_soln = 12
+csq_explanation = 'There are exactly 12 unique pentomino shapes. They are often labeled with letters: F, I, L, N, P, T, U, V, W, X, Y, Z. Each shape is distinct even when rotated or flipped.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you find a way to fit all 12 pentominoes into a rectangle? What would be the possible dimensions of that rectangle? '
+csq_soln = '6x10 or 5x12 or 4x15 or 3x20'
+csq_check_function = lambda sub, sol: '60' in sub or ('6' in sub and '10' in sub) or ('5' in sub and '12' in sub) or ('4' in sub and '15' in sub) or ('3' in sub and '20' in sub)
+csq_size = 30
+csq_explanation = '''All 12 pentominoes together cover 12 × 5 = 60 squares.
+
+Possible rectangle dimensions with area 60:
+- 6 × 10 (most common, many solutions exist)
+- 5 × 12 (also possible)
+- 4 × 15 (possible but harder)
+- 3 × 20 (possible but very challenging)
+
+The 6×10 rectangle has over 2,000 distinct solutions!'''
+</question>
+
+<question pythonliteral>
+csq_prompt = 'How many different hexominoes (6 squares connected edge-to-edge) can you find?<br/>'
+csq_soln = 35
+csq_explanation = 'There are exactly 35 unique hexominoes. The number of polyominoes grows rapidly with size: 1 domino, 2 trominoes, 5 tetrominoes, 12 pentominoes, 35 hexominoes, 108 heptominoes (7 squares), and so on!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why do we use only 6 out of 7 pentomino pieces to solve the calendar puzzle?'
+csq_options = [
+    'Because 6 pieces cover exactly 30 squares, leaving 1 square (the date) visible',
+    'Because 7 pieces are too difficult to arrange',
+    'Because we lost one piece',
+    'Because the calendar only has 6 days'
+]
+csq_soln = 'Because 6 pieces cover exactly 30 squares, leaving 1 square (the date) visible'
+csq_explanation = 'Each pentomino covers 5 squares, so 6 pieces cover 6 × 5 = 30 squares. The calendar grid has 31 squares (for the days of a month), so using 6 pieces leaves exactly 1 square uncovered — the date you want to display! Having 7 pieces gives you flexibility to find a solution for any date.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you draw all 12 pentominoes? Name 5 of the letter-shaped pentominoes (e.g., "L-shape"): '
+csq_soln = 'F, I, L, N, P, T, U, V, W, X, Y, Z'
+csq_check_function = lambda sub, sol: sum([1 for letter in ['F', 'I', 'L', 'N', 'P', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'] if letter in sub.upper()]) >= 3
+csq_size = 30
+csq_explanation = '''The 12 pentominoes are named after letters they resemble:
+
+F, I, L, N, P, T, U, V, W, X, Y, Z
+
+Some memorable ones:
+- **I** — five squares in a straight line
+- **X** — plus sign shape
+- **T** — T-shaped
+- **L** — L-shaped
+- **U** — U-shaped (like a horseshoe)
+
+Try drawing all 12 on graph paper!'''
+</question>

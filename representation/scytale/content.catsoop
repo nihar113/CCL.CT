@@ -1,0 +1,111 @@
+# Wrap and Decode – The Secret Message Activity
+
+<catsoop-section>Introduction</catsoop-section>
+
+A long time ago, before computers and mobile phones, Greek soldiers used a clever way to send secret messages. They used a special tool called a **Scytale** — a stick and a paper strip. They wrapped the paper around the stick, wrote the message, and then unwrapped it. The letters looked all mixed up! Only the person with the same size stick could wrap it again and read the real message.
+
+This activity helps you learn how ancient people used logic and patterns to hide information — just like computers do today in coding and encryption.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- A long paper strip (about 30 cm long and 2 cm wide)
+- A round stick / pen / pencil (your Scytale)
+- Tape or glue
+- Scissors
+- Sketch pens or pencils
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. **Cut a Paper Strip:**
+   Cut a long strip of paper — about 2 cm wide and 30 cm long.
+
+2. **Wrap the Strip:**
+   Wrap the paper tightly around your stick or pen. Make sure the edges are straight.
+
+3. **Write the Message:**
+   Write one letter on each turn of the paper. Example: "ISCOOL"
+
+4. **Unwrap the Paper:**
+   Carefully unwrap the strip. The letters will now look scrambled and unreadable!
+
+5. **Decode It:**
+   To read the secret message again, wrap the same strip on another stick of the same size. The letters will line up again to show your hidden message!
+
+<center>
+<img src="COURSE/representation/scytale/scytale_1.png" alt="Scytale Instructions Step 1" height="300"/>
+<img src="COURSE/representation/scytale/scytale_2.png" alt="Scytale Instructions Step 2" height="300"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When you wrote your message on the wrapped paper, each letter got written in a different position. When you unwrapped it, the message looked jumbled because the letters were no longer in order.
+
+But when you wrapped it again on a stick of the same thickness (radius), the letters came back in the right order.
+
+This is how the **Scytale cipher** works — it's an ancient way of coding and decoding messages. It's the same idea that computers use today in **encryption** — hiding information and unlocking it with a matching "key."
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What is a Scytale?'
+csq_options = [
+    'An ancient tool (stick + paper strip) used to send secret messages',
+    'A type of computer',
+    'A musical instrument',
+    'A Greek food'
+]
+csq_soln = 'An ancient tool (stick + paper strip) used to send secret messages'
+csq_explanation = 'A Scytale is an ancient encryption device used by Greek soldiers. It consists of a cylindrical stick around which a strip of paper (or leather) is wrapped. Messages written on the wrapped paper become scrambled when unwrapped, creating a secret code.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why do the letters look mixed up after unwrapping the paper?'
+csq_options = [
+    'Because each letter was written on a different turn of the paper, so they end up in different positions when unwrapped',
+    'Because the ink fades away',
+    'Because the paper shrinks',
+    'Because the letters fall off'
+]
+csq_soln = 'Because each letter was written on a different turn of the paper, so they end up in different positions when unwrapped'
+csq_explanation = 'When you write on wrapped paper, each letter goes on a different turn/coil. When you unwrap it, these letters are now spread apart and mixed with letters from other turns, making the message look scrambled and unreadable.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What do you need to decode the message again?'
+csq_options = [
+    'A stick of the same size (thickness/radius) as the original',
+    'Any random stick',
+    'A computer',
+    'Special glasses'
+]
+csq_soln = 'A stick of the same size (thickness/radius) as the original'
+csq_explanation = 'To decode the message, you need a stick with the same thickness (radius) as the original one used to write the message. This is the "key" — only the matching stick will align the letters correctly to reveal the hidden message!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is this activity similar to modern computer coding/encryption?'
+csq_options = [
+    'Both hide information using a method that requires a specific "key" to unlock',
+    'Both use paper strips',
+    'Both need Greek soldiers',
+    'Both use sticks'
+]
+csq_soln = 'Both hide information using a method that requires a specific "key" to unlock'
+csq_explanation = 'The Scytale and modern encryption both work on the same principle: information is scrambled (encrypted) using a method, and you need the correct "key" to unscramble (decrypt) it. For the Scytale, the key is a stick of the right size. For computers, the key is a secret code or password!'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you think of other ways to hide a secret message? Name one method: '
+csq_soln = 'invisible ink'
+csq_check_function = lambda sub, sol: len(sub.strip()) > 2
+csq_size = 40
+csq_explanation = '''There are many ways to hide secret messages! Here are some examples:
+- **Invisible ink** — Write with lemon juice; heat reveals the message
+- **Caesar cipher** — Shift each letter by a fixed number (A→D, B→E, etc.)
+- **Morse code** — Use dots and dashes to represent letters
+- **Pigpen cipher** — Replace letters with symbols
+- **Steganography** — Hide messages inside images or other files
+- **Book cipher** — Use page/line/word numbers from a specific book
+
+All of these are forms of cryptography — the science of secret communication!'''
+</question>

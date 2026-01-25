@@ -1,0 +1,133 @@
+# Pulley Computer
+
+<catsoop-section>Introduction</catsoop-section>
+
+Have you ever wondered how a computer processes information? In this activity, you will learn how a simple pulley system can work like a computer's logic circuit!
+
+Just like computers use wires and logic gates to send and receive signals, we'll use ropes and pulleys to represent data flow. By using everyday materials, you will explore the basic ideas behind **input**, **process**, and **output** — the foundation of computer architecture — in a hands-on and visual way.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Small pulleys (3–4 pieces)
+- Rope or thread (2–3 meters)
+- Cardboard or wooden board (for mounting)
+- Paper clips or small weights (to act as data bits)
+- Markers and tape
+- Labels: INPUT, PROCESS, OUTPUT
+- A small stick or straw (to act as a lever)
+
+<catsoop-section>Instructions</catsoop-section>
+
+**Step 1: Setup the Pulley Board**
+
+Fix your pulleys on the board — one at the top left (INPUT), one in the center (PROCESS), and one at the right side (OUTPUT). Label each pulley clearly.
+
+<center>
+<img src="COURSE/architecture/pulley_computer/pulley_computer_1.png" alt="Pulley Board Setup" height="400"/>
+</center>
+
+**Step 2: Connect the Ropes**
+
+Pass the rope through all the pulleys so that when you pull one side (INPUT), it moves the rope through the system to reach the OUTPUT. This shows how data travels through different computer components.
+
+**Step 3: Add Data Bits**
+
+Attach a small paper clip or weight on the rope near the INPUT pulley. This represents a bit of information (0 or 1). Now, pull the rope gently and watch how this "data" moves through the system.
+
+**Step 4: Introduce Decision Points**
+
+Add one extra pulley in the middle — this will represent a logic gate or CPU. Attach a small lever or stick that can direct the rope either up or down, just like a computer decides between 0 and 1.
+
+**Step 5: Observe the Flow**
+
+Pull the rope from the input side. If your lever is set one way, the rope goes up (1). If it's set the other way, the rope goes down (0). You've just made a mechanical logic system!
+
+**Step 6: Add More Layers (Optional)**
+
+Add more pulleys to represent Memory, CPU, or Output Devices. You can even color-code the ropes for different data paths — red for Input, blue for Process, and green for Output.
+
+<center>
+<img src="COURSE/architecture/pulley_computer/pulley_computer_2.png" alt="Complete Pulley Computer" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When you pull the rope at the INPUT, the mechanical motion travels through the pulleys, similar to how electric signals move through a computer's circuit. Each pulley acts like a part of the computer system:
+
+- **INPUT pulley** = Keyboard or Mouse
+- **PROCESS pulley** = CPU
+- **OUTPUT pulley** = Monitor or Speaker
+
+By changing the direction of the rope or the position of pulleys, you simulate how computers route data, make decisions, and give results.
+
+This simple setup makes invisible computer logic visible and easy to understand!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What does the INPUT pulley represent in this activity?'
+csq_options = [
+    'Keyboard or Mouse — devices that send data into the computer',
+    'Monitor or Speaker — devices that show results',
+    'CPU — the brain of the computer',
+    'Memory — where data is stored'
+]
+csq_soln = 'Keyboard or Mouse — devices that send data into the computer'
+csq_explanation = 'The INPUT pulley represents input devices like a keyboard or mouse. Just like you pull the rope to start the motion, input devices send signals (data) into the computer system for processing.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How does the rope\'s movement show data transfer?'
+csq_options = [
+    'The rope carries the attached weight (data bit) from INPUT through PROCESS to OUTPUT, just like signals travel through a computer',
+    'The rope makes noise when it moves',
+    'The rope changes color as it moves',
+    'The rope stays still while data moves'
+]
+csq_soln = 'The rope carries the attached weight (data bit) from INPUT through PROCESS to OUTPUT, just like signals travel through a computer'
+csq_explanation = 'The rope\'s movement physically demonstrates how data (represented by the paper clip or weight) travels through a computer system. Just like electrical signals flow through wires and circuits, the rope carries "data" from input, through processing, to output.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Which pulley acts as the CPU or decision-maker?'
+csq_options = [
+    'The PROCESS pulley in the center, which can direct data different ways',
+    'The INPUT pulley on the left',
+    'The OUTPUT pulley on the right',
+    'All pulleys act as the CPU'
+]
+csq_soln = 'The PROCESS pulley in the center, which can direct data different ways'
+csq_explanation = 'The PROCESS pulley in the center represents the CPU (Central Processing Unit). Just like the CPU processes data and makes decisions, this pulley (with its lever) can direct the rope in different directions, simulating how a computer decides between 0 and 1.'
+</question>
+
+<question smallbox>
+csq_prompt = 'What happens if you add more pulleys (memory, output)? Describe briefly: '
+csq_soln = 'the system becomes more complex and can simulate more computer functions'
+csq_check_function = lambda sub, sol: 'complex' in sub.lower() or 'more' in sub.lower() or 'function' in sub.lower() or 'path' in sub.lower() or 'component' in sub.lower() or 'memory' in sub.lower() or 'store' in sub.lower()
+csq_size = 50
+csq_explanation = 'Adding more pulleys creates a more complex system that can simulate additional computer components. For example: extra pulleys can represent Memory (storing data temporarily), multiple Output devices, or even a Cache. More pulleys = more data paths = more realistic computer simulation!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is the lever in the middle pulley similar to a logic gate?'
+csq_options = [
+    'It directs the rope in different directions based on its position, like a gate outputs 0 or 1',
+    'It makes the rope stronger',
+    'It colors the rope',
+    'It stops the rope completely'
+]
+csq_soln = 'It directs the rope in different directions based on its position, like a gate outputs 0 or 1'
+csq_explanation = 'The lever acts like a logic gate by making a decision: based on its position, it directs the rope either up (representing 1) or down (representing 0). This is exactly what logic gates do — they take inputs and produce outputs based on logical rules!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What is the main purpose of this pulley computer activity?'
+csq_options = [
+    'To visualize how computers process information using input, process, and output',
+    'To learn how to tie knots',
+    'To measure weight',
+    'To lift heavy objects'
+]
+csq_soln = 'To visualize how computers process information using input, process, and output'
+csq_explanation = 'This activity makes the invisible logic of computers visible! By using physical pulleys and ropes, we can see and understand how data flows from input devices, gets processed by the CPU, and reaches output devices. It demonstrates the fundamental architecture of all computers.'
+</question>

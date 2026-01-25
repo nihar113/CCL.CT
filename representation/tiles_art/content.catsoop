@@ -1,0 +1,119 @@
+# Face Coding Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+The Face Coding Puzzle is a fun, hands-on activity that connects art, logic, and computer science. Students create a double-sided puzzle — one side shows a color-coded face, and the other side has a number-coded grid. When the numbered pieces are arranged correctly, the hidden face automatically appears. This activity helps students understand pixelation, pattern recognition, and how digital images are formed using small units (pixels), just like computers process pictures.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Chart paper (A3 or A4 size)
+- Thick cardboard sheet (for strong base)
+- Color-coded face image – Figure 01
+- Number-coded grid image – Figure 02
+- Scissors
+- Glue or Fevicol
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Print the color-coded face (Figure 01) on one side of the chart paper and the number-coded grid (Figure 02) on the other side.
+
+2. Paste a thick cardboard sheet behind the chart paper to make it firm so that the small pieces do not bend after cutting.
+
+<center>
+<img src="COURSE/representation/tiles_art/face_coding_fig1.png" alt="Figure 01 - Color-coded face" height="400"/>
+<img src="COURSE/representation/tiles_art/face_coding_fig2.png" alt="Figure 02 - Number-coded grid" height="400"/>
+</center>
+
+3. On the back side of the cardboard, stick the numbered puzzle grid — each square should have a clear number code.
+
+<center>
+<img src="COURSE/representation/tiles_art/face_coding_1.png" alt="Numbered puzzle grid" height="400"/>
+</center>
+
+4. Cut the entire sheet carefully along the grid lines to create small square pieces.
+
+<center>
+<img src="COURSE/representation/tiles_art/face_coding_2.png" alt="Cut puzzle pieces" height="400"/>
+</center>
+
+5. Arrange the small squares according to the number code shown in Figure 02. When placed correctly, the color-coded face on the front side will automatically appear completing the puzzle.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When the puzzle pieces are arranged according to the number codes, the color pattern on the opposite side aligns perfectly, forming a complete face.
+
+This shows that every image is made of small squares called **pixels**, and when placed in the correct order, the whole image becomes visible.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What are the two sides of the Face Coding Puzzle?'
+csq_options = [
+    'A color-coded face and a number-coded grid',
+    'Two different faces',
+    'A blank side and a colored side',
+    'Two identical grids'
+]
+csq_soln = 'A color-coded face and a number-coded grid'
+csq_explanation = 'The Face Coding Puzzle has a color-coded face on one side and a number-coded grid on the other side. This allows the puzzle to be solved by arranging the numbered pieces.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What happens when you arrange the numbered pieces correctly?'
+csq_options = [
+    'The color-coded face on the front side appears',
+    'The numbers disappear',
+    'A new pattern is created',
+    'Nothing happens'
+]
+csq_soln = 'The color-coded face on the front side appears'
+csq_explanation = 'When the numbered pieces are arranged in the correct order, the color pattern on the opposite side aligns perfectly, revealing the complete face image.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What do the small squares in the puzzle represent?'
+csq_options = [
+    'Pixels',
+    'Numbers',
+    'Colors',
+    'Letters'
+]
+csq_soln = 'Pixels'
+csq_explanation = 'The small squares represent pixels — the tiny units that make up digital images. Just like in this puzzle, computer screens display images using millions of tiny pixels.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is this activity related to how computers form images?'
+csq_options = [
+    'Computers also use small units (pixels) arranged in a grid to display images',
+    'Computers use numbers only',
+    'Computers do not use grids',
+    'This activity is not related to computers'
+]
+csq_soln = 'Computers also use small units (pixels) arranged in a grid to display images'
+csq_explanation = 'Just like the puzzle uses small squares arranged in a specific pattern, computers form images by arranging millions of tiny pixels in a grid, each with its own color value.'
+</question>
+
+<question smallbox>
+csq_prompt = 'What is the concept of pixelation? Explain in a few words: '
+csq_soln = 'dividing an image into small squares'
+csq_check_function = lambda sub, sol: 'pixel' in sub.lower() or 'small' in sub.lower() or 'square' in sub.lower() or 'grid' in sub.lower()
+csq_size = 50
+csq_explanation = 'Pixelation is the process of dividing an image into small square units called pixels. When an image is pixelated, you can see the individual squares that make up the picture.'
+</question>
+
+<question smallbox>
+csq_prompt = 'How does pattern recognition help in solving the puzzle? '
+csq_soln = 'by identifying the correct sequence of numbers'
+csq_check_function = lambda sub, sol: 'pattern' in sub.lower() or 'number' in sub.lower() or 'sequence' in sub.lower() or 'order' in sub.lower() or 'arrange' in sub.lower()
+csq_size = 50
+csq_explanation = 'Pattern recognition helps by allowing you to identify the correct sequence of numbers and understand how they correspond to the position of each piece in the final image.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you create your own puzzle using a different picture? Briefly describe how: '
+csq_soln = 'yes by creating a grid and numbering the squares'
+csq_check_function = lambda sub, sol: 'grid' in sub.lower() or 'number' in sub.lower() or 'square' in sub.lower() or 'cut' in sub.lower() or 'divide' in sub.lower()
+csq_size = 50
+csq_explanation = 'Yes! You can create your own puzzle by: 1) Choosing any picture, 2) Drawing a grid over it, 3) Numbering each square, 4) Creating a separate numbered grid for the back, and 5) Cutting and mixing the pieces.'
+</question>

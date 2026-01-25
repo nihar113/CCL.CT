@@ -1,0 +1,59 @@
+# Golomb Ruler
+
+<catsoop-section>Introduction</catsoop-section>
+
+Unlike the regular ruler which has marks at each unit measure, the Golomb ruler is a specific type of ruler that has only a few integer markings. Inspired by the idea, this is a modified version of the original Golomb ruler.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Golomb Rulers: 2
+
+<center>
+<img src="COURSE/representation/golomb_ruler/golomb_ruler_fig1.png" alt="Golomb Ruler Figure 1" height="200"/>
+<img src="COURSE/representation/golomb_ruler/golomb_ruler_fig3.png" alt="Golomb Ruler Figure 3" height="200"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Use the ruler with markings 0, 1, 2, 6, 10 and 13 to measure all the distances from 1 to 13. For example, distance 1 can be measured between 0 and 1 (or between 1 and 2), distance 3 can be measured between markings 10 and 13 (13 - 10 = 3). (Ref. Fig. no.1)
+
+2. The key property of a Golomb ruler is that no two pairs of marks have the same distance between them. Therefore, this is not an exact Golomb ruler but a variation of it. But the variation makes it possible to measure all the distances from 1 to 13 with this ruler in minimum markings. Such a type of ruler where you can measure all the distances is called a perfect ruler.
+
+3. Use the other ruler with markings 0, 1, 4, 10, 12, 15 and 17 to measure all the distances from 1 to 17. (Ref. Fig. no. 3)
+
+
+<catsoop-section>What's Happening</catsoop-section>
+
+- How many minimum markings do you need given the length of the ruler?
+
+- For the first ruler, you have 13 distances that have to be measured (1, 2, 3, ...13). The required number of markings (m) on the ruler can be determined by solving $^mC_2 = 13$. This gives m = 6.
+
+- Out of these six points, the markings 0 and 13 are mandatory (in order to measure 13). The remaining four points can be determined by the trial and error approach.
+
+- Similarly, for the second ruler, we have to solve for the equation $^mC_2 = 17$, giving m = 7. Therefore we need at least 7 markings for the second ruler.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Which of the distances in the first ruler (with markings 0, 1, 2, 6, 10, 13) can you measure in more than one way? Enter the distance value: '
+csq_soln = '1'
+csq_check_function = lambda sub, sol: sub.strip() == sol
+csq_size = 10
+csq_explanation = 'Distance 1 can be measured in two ways: between 0 and 1, or between 1 and 2.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Construct a ruler that can measure all distances up to 15. Enter the markings separated by commas (e.g., 0,1,2,...): '
+csq_soln = '0,1,2,6,10,14,15'
+csq_check_function = lambda sub, sol: sorted([int(x.strip()) for x in sub.split(',')]) == sorted([int(x.strip()) for x in sol.split(',')])
+csq_size = 30
+csq_explanation = 'One possible solution is 0, 1, 2, 6, 10, 14, 15. This uses 7 markings which satisfies $^7C_2 = 21 \\geq 15$.'
+</question>
+
+<question smallbox>
+csq_prompt = 'It has been proved that a Perfect Golomb ruler (the one where all distances from 0 to l are measured uniquely) of length more than 6 units doesn\'t exist. Can you create such a ruler of length 6? Enter the markings separated by commas: '
+csq_soln = '0,1,3,6'
+csq_check_function = lambda sub, sol: sorted([int(x.strip()) for x in sub.split(',')]) == sorted([int(x.strip()) for x in sol.split(',')])
+csq_size = 20
+csq_explanation = 'The perfect Golomb ruler of length 6 is: 0, 1, 3, 6. This measures all distances 1-6 uniquely: 1 (1-0), 2 (3-1), 3 (3-0 or 6-3), 4 (not unique - this is actually a perfect difference set ruler), 5 (6-1), 6 (6-0).'
+</question>

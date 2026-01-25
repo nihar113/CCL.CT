@@ -1,0 +1,108 @@
+# Punched Cards (0–99)
+
+<catsoop-section>Introduction</catsoop-section>
+
+In this activity, you will learn how early computers stored and sorted data using punched cards. Each card has small holes that represent numbers from 0 to 99 using the decimal system (base 10). By shuffling and sorting these cards, you'll understand how computers organize information step by step — just like humans do while arranging number cards, but faster and using logic.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 100 small cards (numbers 0 to 99)
+- Hole punch or paper puncher
+- Chart paper or thick card sheet
+- Sketch pens or markers
+- A thin stick or skewer (sorting tool)
+- Rubber bands or paper clips
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Cut 100 small square cards (about 5 cm × 5 cm) and write one number on each card — from 0 to 99.
+
+2. Using a hole punch, make 10 tiny holes on each card, each hole representing a digit from 0 to 9.
+
+3. Punch the holes according to the number written on the card — for example, card 07 will have a hole at position 7, and card 42 will have holes at positions 4 and 2.
+
+4. After preparing all the cards, shuffle them well so that the numbers are mixed.
+
+5. Now take your sorting stick and pass it through one hole position at a time, starting from 0 up to 9. When you lift the stick, the cards with holes in that position will rise. Place them in a separate pile.
+
+6. Repeat this step for all numbers.
+
+7. By the end, the cards will be perfectly sorted from 0 to 99.
+
+8. Finally, you can group them in tens (0–9, 10–19, 20–29, etc.) using rubber bands or clips.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When you inserted the stick through the holes, you were giving a sorting command, just like a computer program. Each hole acted like a switch — open (1) or closed (0).
+
+This is similar to how early computers like the **IBM punch-card machines** worked. They used physical holes to store data and perform operations like sorting and counting.
+
+Through this activity, you explored how simple mechanical sorting is connected to the way digital computers process information today.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What number system do we use in this activity?'
+csq_options = [
+    'Decimal (base 10)',
+    'Binary (base 2)',
+    'Octal (base 8)',
+    'Hexadecimal (base 16)'
+]
+csq_soln = 'Decimal (base 10)'
+csq_explanation = 'In this activity, we use the decimal (base 10) number system. Each card has 10 holes representing digits 0-9, which are the digits used in the decimal system.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'How many holes are on each punched card?<br/>'
+csq_soln = 10
+csq_explanation = 'Each punched card has 10 holes, one for each digit from 0 to 9 in the decimal system.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What does each hole on the card represent?'
+csq_options = [
+    'A digit from 0 to 9',
+    'A letter from A to J',
+    'A binary bit (0 or 1)',
+    'A color code'
+]
+csq_soln = 'A digit from 0 to 9'
+csq_explanation = 'Each hole on the card represents a digit from 0 to 9. When a hole is punched at a specific position, it indicates that digit is part of the number on the card.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What happens when you insert the stick through the holes?'
+csq_options = [
+    'Cards with holes in that position rise up, allowing you to separate them',
+    'Cards with holes fall down',
+    'All cards stick together',
+    'Nothing happens'
+]
+csq_soln = 'Cards with holes in that position rise up, allowing you to separate them'
+csq_explanation = 'When you insert the stick through a specific hole position and lift it, cards that have a hole at that position will rise with the stick, while cards without a hole at that position will stay behind. This allows you to separate and sort the cards.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is this similar to how computers store and sort data?'
+csq_options = [
+    'Computers use switches (on/off or 1/0) to represent and process data, just like holes (open/closed)',
+    'Computers use physical cards',
+    'Computers use colored markers',
+    'There is no similarity'
+]
+csq_soln = 'Computers use switches (on/off or 1/0) to represent and process data, just like holes (open/closed)'
+csq_explanation = 'Just like the holes on our cards act as switches (open or closed), computers use electronic switches that can be on (1) or off (0) to store and process data. Early IBM punch-card machines literally used physical holes to represent data, which is the ancestor of modern digital computing.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why do we group cards into sets of ten?'
+csq_options = [
+    'Because we are using the decimal system (base 10) which groups numbers in tens',
+    'Because there are only 10 cards',
+    'Because the stick can only hold 10 cards',
+    'Because it looks neat'
+]
+csq_soln = 'Because we are using the decimal system (base 10) which groups numbers in tens'
+csq_explanation = 'We group cards into sets of ten (0-9, 10-19, 20-29, etc.) because we are working with the decimal (base 10) system. In base 10, numbers naturally group into tens, hundreds, thousands, etc. This grouping makes it easier to organize and find specific numbers.'
+</question>

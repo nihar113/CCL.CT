@@ -1,0 +1,80 @@
+# Weight Sorting
+
+<center>
+<img src="COURSE/algorithms/khota_sikka/weight_sorting_1.png" alt="Weight Sorting Materials" height="400"/>
+</center>
+
+<catsoop-section>Introduction</catsoop-section>
+
+We all have used computers or smart phones. We mostly need to modify our data by Alphabetic order, Numerical order, Date modified order in ascending or descending order. And computers do it very quickly. Have you ever thought about how computers do this process very quickly? Let's understand this by an activity.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Weighing Balance
+- 8 Identical Containers
+- 36 Coins
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Fill each container with a different number of coins. First with one coin, second with two coins, and so on.
+
+2. Mix them up so that you no longer know the order of the weights.
+
+3. Now put containers one by one on a scale. Replace the lighter containers with the remaining containers and leave the heavier containers on the scale as it is. Now you have found the heaviest container and put them aside. Now repeat this process with remaining containers one by one and arrange the containers heaviest to lighter. Note down how many times you have to do the weighing process to complete your task.
+
+4. Now let's do this with another method. Take any random container say A and keep it on a scale of one side. Remaining containers keep another side of the scale. Containers which are heavier than container A put them on one side say right side and containers which are lighter than A put them another side say left side.
+
+5. Repeat this process with right side containers and arrange them then left sided containers and arrange them. Note how many times we need to weigh for our task.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+In the first method we have 8 containers. First we weigh 7 times to find the heaviest container. Then we have 7 containers so we have to weigh 6 times and so on.
+
+So we have took:
+
+$$7 + 6 + 5 + 4 + 3 + 2 + 1 = 28 \text{ attempts}$$
+
+and arrange the containers.
+
+In the second round we randomly took one container and divided the container in two parts heavier and lighter. So weighing heavier and lighter containers will automatically cancel out. Which reduces the number of attempts. So we can easily sort out containers in ascending or descending order.
+
+There are also many processes like this which computers do and give us results in minimum time.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question pythonliteral>
+csq_prompt = 'How many minimum attempts will you need to arrange 1 tea cup each of sugar, puffed rice, cotton, peanuts and potato in ascending order by their weight using the first method (comparing one by one)?<br/>'
+csq_soln = 10
+csq_explanation = '''With 5 items using the first method:
+- First, we need 4 comparisons to find the heaviest
+- Then 3 comparisons to find the next heaviest
+- Then 2 comparisons
+- Then 1 comparison
+
+Total = $4 + 3 + 2 + 1 = 10$ attempts'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you find another method to arrange weights in ascending/descending order by minimum attempts? Briefly describe: '
+csq_soln = 'divide and conquer'
+csq_check_function = lambda sub, sol: 'divide' in sub.lower() or 'split' in sub.lower() or 'half' in sub.lower() or 'pivot' in sub.lower() or 'quick' in sub.lower() or 'merge' in sub.lower() or 'binary' in sub.lower()
+csq_size = 50
+csq_explanation = '''The second method described in this activity is similar to the Quick Sort algorithm used by computers. It uses a "divide and conquer" approach:
+1. Pick a random element (pivot)
+2. Divide items into two groups: heavier and lighter than pivot
+3. Recursively sort each group
+
+Other efficient methods include Merge Sort and Heap Sort, which also use divide and conquer strategies.'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why is the second method (dividing into heavier and lighter groups) more efficient than the first method?'
+csq_options = [
+    'Because it divides the problem into smaller parts, reducing total comparisons',
+    'Because it uses a bigger scale',
+    'Because it weighs multiple containers at once',
+    'Because the containers are lighter'
+]
+csq_soln = 'Because it divides the problem into smaller parts, reducing total comparisons'
+csq_explanation = 'The second method is more efficient because it uses a "divide and conquer" strategy. By splitting the containers into two groups based on a pivot, we eliminate the need to compare every container with every other container, significantly reducing the total number of comparisons needed.'
+</question>

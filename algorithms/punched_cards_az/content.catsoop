@@ -1,0 +1,97 @@
+# Card Sorting
+
+<catsoop-section>Introduction</catsoop-section>
+
+If you have cards with numbers. But they are not in consecutive numbers. You need to arrange them in a consecutive system then how will you do it? Take them one by one and arrange them by their order. This? Don't you think it will be a very time consuming manner? Then what to do? Let's do it. Do you know computers use binary language for processing? Same thing we will do here.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Cards with punching by hole and slit according to their numbers in binary system
+- Stick
+
+<center>
+<img src="COURSE/algorithms/punched_cards_az/punched_cards_az_1.png" alt="Punched Cards" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. First arrange all the cards with the same faces on one side and upright.
+
+2. Now keep all the holes aligned with other cards.
+
+3. Now take a stick and insert it in the first hole from right side. Shake them carefully and collect those cards which are not hanging in a stick. Collect these cards without changing their order and put these cards back to the hanging cards and remove the stick.
+
+4. Insert the stick in the second hole from the right side.
+
+5. Repeat this process until the stick passes from all the holes respectively.
+
+6. Now see your cards. It will be arranged in order.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Here we made holes as binary numbers. At 1 we made slits and at 0 we made holes. So cards will fall down from slits and will hang at holes. See the binary patterns:
+
+$$\begin{array}{|c|c||c|c||c|c|}
+\hline
+\textbf{Number} & \textbf{Binary} & \textbf{Number} & \textbf{Binary} & \textbf{Number} & \textbf{Binary} \\
+\hline
+1 & 0001 & 6 & 0110 & 11 & 1011 \\
+\hline
+2 & 0010 & 7 & 0111 & 12 & 1100 \\
+\hline
+3 & 0011 & 8 & 1000 & 13 & 1101 \\
+\hline
+4 & 0100 & 9 & 1001 & 14 & 1110 \\
+\hline
+5 & 0101 & 10 & 1010 & 15 & 1111 \\
+\hline
+\end{array}$$
+
+You can see the patterns. In the first card the right most hole has slit and remaining are holes. In second card the second hole from right has slit and others are holes.
+
+While inserting stick in the first right most hole, the cards which have slit will fall down which are 1, 3, 5, 7, 9, 11, ... (odd numbers). These cards go backwards.
+
+On the second round the cards which have slit on the second hole from right will fall down and go backward. Means 2, 3, 6, 7, 10, 11, ...
+
+Continuing this process without changing their order while collecting slipping cards through slits, the cards will automatically be arranged in ascending order.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'What will you do if you want to arrange in reverse (descending) order? '
+csq_soln = 'collect hanging cards first'
+csq_check_function = lambda sub, sol: 'hang' in sub.lower() or 'reverse' in sub.lower() or 'opposite' in sub.lower() or 'front' in sub.lower() or 'before' in sub.lower()
+csq_size = 50
+csq_explanation = 'To arrange in descending order, instead of putting the fallen cards (slits) at the back, put the hanging cards (holes) at the back. Or equivalently, collect the hanging cards first and place them behind the fallen cards.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you arrange these cards by inserting a stick from the left hole to the right hole? Explain why or why not: '
+csq_soln = 'no because it will sort by most significant bit first'
+csq_check_function = lambda sub, sol: 'no' in sub.lower() or 'not' in sub.lower() or 'wrong' in sub.lower() or 'incorrect' in sub.lower() or 'opposite' in sub.lower() or 'reverse' in sub.lower() or 'descending' in sub.lower()
+csq_size = 50
+csq_explanation = 'No, if you insert from left to right, you would be sorting by the most significant bit first, which would not give the correct ascending order. The algorithm works because we process from the least significant bit (rightmost) to the most significant bit (leftmost), which is essential for the radix sort algorithm to work correctly.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'How many holes do we need to represent 26 Alphabets?<br/>'
+csq_soln = 5
+csq_explanation = '''To represent 26 alphabets, we need enough binary digits (holes) to have at least 26 unique combinations.
+
+- 4 holes give us $2^4 = 16$ combinations (not enough)
+- 5 holes give us $2^5 = 32$ combinations (enough for 26 alphabets)
+
+Therefore, we need **5 holes** to represent all 26 alphabets.'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'This card sorting technique is similar to which computer sorting algorithm?'
+csq_options = [
+    'Radix Sort',
+    'Bubble Sort',
+    'Quick Sort',
+    'Merge Sort'
+]
+csq_soln = 'Radix Sort'
+csq_explanation = 'This technique is similar to Radix Sort, which sorts numbers by processing individual digits (or bits) from least significant to most significant. Each pass through the holes is like one iteration of radix sort processing one bit position.'
+</question>

@@ -1,0 +1,111 @@
+# Edge-Matching Triangle Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+The aim of this puzzle is to fit all 24 equilateral triangle pieces into the hexagonal puzzle board such that all touching edges match in color.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 1 Hexagonal puzzle board
+- 24 triangle-shaped pieces (equilateral, with colored edges)
+
+<center>
+<img src="COURSE/algorithms/edge_match_triangle/edge_match_triangle_1.png" alt="Edge-Matching Triangle Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Spread out all the triangle pieces.
+
+2. Try to place the triangles on the hexagonal puzzle board.
+
+3. You can't arrange like the first example — the second one shows the right way to arrange.
+
+4. Pieces should fit without any overlaps or gaps, and **adjacent edges must be of the same color**.
+
+5. Rearrange the pieces until all matching edges align correctly to complete the pattern.
+
+<center>
+<img src="COURSE/algorithms/edge_match_triangle/edge_match_triangle_2.png" alt="Edge-Matching Triangle Instructions" height="200"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+You are working with shapes and colors that fit together like a jigsaw. Since all pieces are equilateral triangles, you explore how angles come together to form a hexagon and how symmetry helps in creating color patterns. It's geometry in action — visually and by touch.
+
+This puzzle demonstrates several computational concepts:
+
+- **Constraint satisfaction** — Each piece must satisfy the color-matching rule with all its neighbors
+- **Combinatorics** — With 24 pieces and multiple orientations, there are millions of possible arrangements
+- **Backtracking algorithms** — When a piece doesn't fit, you need to undo and try different options
+- **Pattern recognition** — Identifying which pieces might work in a particular spot based on their edge colors
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Make your own 3×3 Skyscrapers Puzzle. Describe the rules briefly: '
+csq_soln = 'numbers 1-3 in each row and column'
+csq_check_function = lambda sub, sol: 'row' in sub.lower() or 'column' in sub.lower() or 'number' in sub.lower() or 'clue' in sub.lower() or 'see' in sub.lower()
+csq_size = 50
+csq_explanation = '''A 3×3 Skyscrapers Puzzle rules:
+1. Place numbers 1, 2, 3 in each row and column (like Sudoku)
+2. Numbers represent building heights
+3. Clues on the edges tell how many buildings you can "see" from that direction
+4. Taller buildings block the view of shorter ones behind them
+
+Try creating one with clues that have a unique solution!'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Make your own 4×4 Skyscrapers Puzzle. What makes 4×4 harder than 3×3? '
+csq_soln = 'more possibilities and combinations'
+csq_check_function = lambda sub, sol: 'more' in sub.lower() or 'harder' in sub.lower() or 'complex' in sub.lower() or 'combination' in sub.lower() or 'possibility' in sub.lower() or '4' in sub
+csq_size = 50
+csq_explanation = '''A 4×4 Skyscrapers Puzzle is harder because:
+1. More numbers (1-4) means more possibilities per cell
+2. More cells (16 vs 9) means exponentially more combinations
+3. More clues to satisfy simultaneously
+4. Requires more logical deduction steps
+
+The complexity grows rapidly with grid size — this is called "combinatorial explosion" in computer science!'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you arrange the numbers 1 to 9 in a 3×3 grid (using each number once) so that the sum of every row, column, and diagonal is 15? Enter the middle row numbers separated by commas: '
+csq_soln = '3,5,7'
+csq_check_function = lambda sub, sol: '5' in sub and sum([int(x.strip()) for x in sub.split(',') if x.strip().isdigit()]) == 15 if ',' in sub else '5' in sub
+csq_size = 15
+csq_explanation = '''This is the classic 3×3 magic square! The solution is:
+
+| 2 | 7 | 6 |  → 15
+| 9 | 5 | 1 |  → 15
+| 4 | 3 | 8 |  → 15
+  ↓   ↓   ↓
+ 15  15  15
+
+Diagonals: 2+5+8=15 and 6+5+4=15
+
+The number 5 must always be in the center for a 3×3 magic square with numbers 1-9!'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why must adjacent edges have the same color in this puzzle?'
+csq_options = [
+    'It creates a constraint that makes the puzzle challenging and requires logical thinking',
+    'To make the puzzle look pretty',
+    'Because triangles only come in one color',
+    'There is no reason'
+]
+csq_soln = 'It creates a constraint that makes the puzzle challenging and requires logical thinking'
+csq_explanation = 'The color-matching constraint is what makes this puzzle interesting! Without it, you could place triangles anywhere. The constraint forces you to think logically about which pieces can go where, similar to how computer programs must satisfy multiple conditions simultaneously.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'If each triangle has 3 edges and can be rotated to 3 different orientations, how many total arrangements exist for just ONE triangle in ONE position?<br/>'
+csq_soln = 3
+csq_explanation = 'Each equilateral triangle can be placed in 3 different orientations (rotated 0°, 120°, or 240°). This means for each position on the board, you have 3 choices for how to orient a single triangle. With 24 triangles and multiple positions, the total combinations become astronomical!'
+</question>
+
+<center>
+<img src="COURSE/algorithms/edge_match_triangle/edge_match_triangle_3.png" alt="Edge-Matching Triangle Challenge" height="400"/>
+</center>

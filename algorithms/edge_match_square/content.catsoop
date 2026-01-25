@@ -1,0 +1,108 @@
+# Edge-Matching Square Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+The aim of this puzzle is to fit all 16 puzzle pieces into a 4×4 grid in such a way that the edges of adjacent pieces match to form complete sea animal figures. No part of a sea animal should touch the boundary of the board.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 16 square puzzle tiles with sea animal parts
+- 4×4 puzzle board
+
+<center>
+<img src="COURSE/algorithms/edge_match_square/edge_match_square_1.png" alt="Edge-Matching Square Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Lay out all 16 tiles.
+
+2. Arrange them on the 4×4 grid such that:
+   - Each pair of touching edges completes a whole sea animal
+   - No sea animal's body touches the inner edge of the board (as shown in Fig. a)
+
+<center>
+<img src="COURSE/algorithms/edge_match_square/edge_match_square_2.png" alt="Fig. a - No animal touching boundary" height="300"/>
+</center>
+
+3. Arrange in a way that completes the sea animals (as shown in Fig. b).
+
+<center>
+<img src="COURSE/algorithms/edge_match_square/edge_match_square_3.png" alt="Fig. b - Correct arrangement" height="300"/>
+</center>
+
+4. Can't arrange like this (as shown in Fig. c).
+
+<center>
+<img src="COURSE/algorithms/edge_match_square/edge_match_square_4.png" alt="Fig. c - Incorrect arrangement" height="300"/>
+</center>
+
+5. Rotate pieces if needed to make the edges align correctly.
+
+6. Keep rearranging until the entire puzzle is solved.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+This puzzle demonstrates several important computational concepts:
+
+- **Edge matching** — A classic constraint satisfaction problem where adjacent pieces must satisfy specific conditions
+- **Rotation and orientation** — Each square tile can be rotated to 4 different positions (0°, 90°, 180°, 270°), multiplying the possibilities
+- **Boundary conditions** — The rule that no animal touches the boundary adds an extra layer of constraints
+- **Backtracking** — When pieces don't fit, you must undo your choices and try different arrangements
+
+This type of puzzle is related to **tessellation** problems that computers solve in graphics, game design, and even protein folding simulations!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question pythonliteral>
+csq_prompt = 'How many different orientations can each square tile have?<br/>'
+csq_soln = 4
+csq_explanation = 'Each square tile can be rotated to 4 different orientations: 0° (original), 90° (quarter turn), 180° (half turn), and 270° (three-quarter turn). This means for each position on the board, you have 4 choices for how to orient each tile!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why must no sea animal touch the boundary of the board?'
+csq_options = [
+    'It ensures that all sea animals are complete and not cut off at the edges',
+    'Because sea animals don\'t like boundaries',
+    'To make the puzzle easier',
+    'There is no reason'
+]
+csq_soln = 'It ensures that all sea animals are complete and not cut off at the edges'
+csq_explanation = 'The boundary rule ensures that every sea animal figure is complete. If an animal could touch the boundary, it would appear "cut off" or incomplete. This constraint forces all animals to be fully formed within the interior of the puzzle.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What strategy would help solve this puzzle efficiently?'
+csq_options = [
+    'Start with corner and edge pieces first, then fill in the middle',
+    'Place pieces randomly and hope they fit',
+    'Only use pieces of the same color',
+    'Start from the center and work outward'
+]
+csq_soln = 'Start with corner and edge pieces first, then fill in the middle'
+csq_explanation = 'Starting with corners and edges is efficient because: 1) Corner pieces have 2 sides touching the boundary (fewer constraints to satisfy), 2) Edge pieces have 1 side touching the boundary, 3) Once the frame is set, middle pieces have more context to help you place them correctly. This is similar to how many puzzle-solving algorithms work!'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'With 16 tiles, each having 4 possible orientations, what is the total number of ways to orient ALL tiles (ignoring positions)?<br/>'
+csq_soln = 4294967296
+csq_explanation = '''Each tile has 4 orientations, and there are 16 tiles.
+Total orientations = $4^{16} = 4,294,967,296$ (over 4 billion!)
+
+And this doesn't even count the different positions! The actual number of possible arrangements is astronomically larger. This is why computers use smart algorithms (like constraint propagation and backtracking) instead of trying every possibility.'''
+</question>
+
+<question smallbox>
+csq_prompt = 'What makes this puzzle different from a regular jigsaw puzzle? '
+csq_soln = 'pieces can be rotated and edges must match patterns'
+csq_check_function = lambda sub, sol: 'rotat' in sub.lower() or 'edge' in sub.lower() or 'match' in sub.lower() or 'pattern' in sub.lower() or 'square' in sub.lower() or 'same' in sub.lower()
+csq_size = 50
+csq_explanation = '''Key differences from regular jigsaw puzzles:
+1. All pieces are the same shape (squares) — you can't use shape to determine placement
+2. Pieces can be rotated to 4 orientations — more possibilities to consider
+3. Matching is based on completing figures, not interlocking shapes
+4. The boundary constraint adds an extra rule to satisfy
+
+This makes it more like a logic puzzle than a traditional jigsaw!'''
+</question>

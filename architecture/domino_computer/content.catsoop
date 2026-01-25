@@ -1,0 +1,138 @@
+# Playing Cards Computer
+
+<catsoop-section>Introduction</catsoop-section>
+
+We all share our feelings, needs, wills etc by talking to each other. Have you ever thought about how computers talk? We give it problems and it solves them very accurately. Do you wonder how? Computers understand the language of numbers which are known as **binary numbers**. To work on binary numbers computers need a circuit of **"Logic gates"**. Here we are going to build a logic gate with the help of playing cards. Let's see how these cards give us the result.
+
+<center>
+<img src="COURSE/architecture/domino_computer/domino_computer_1.png" alt="Playing Cards Computer Introduction" height="400"/>
+</center>
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Folded playing cards or Domino pieces
+
+<center>
+<img src="COURSE/architecture/domino_computer/domino_computer_2.png" alt="Materials Required" height="300"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. If we are using playing cards, we will fold them from the centre so that the card can be placed perpendicular to the surface. Otherwise we can use domino pieces.
+
+2. First we arrange dominoes for the AND gate. Standing domino represents **1** and fallen domino represents **0**.
+
+3. Put two dominoes for input. Arrange all the dominoes such that we will get the result: if both inputs are 1 then the result will be 1. If any one input is 0 then the result is still 0. Here we use black colour for input and white colour for output.
+
+<center>
+<img src="COURSE/architecture/domino_computer/domino_computer_3.png" alt="AND Gate Setup 1" height="300"/>
+<img src="COURSE/architecture/domino_computer/domino_computer_4.png" alt="AND Gate Setup 2" height="300"/>
+</center>
+
+4. Now give the inputs by pushing the dominoes slightly and see the result.
+
+5. Repeat the process for other gates.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Here we have arranged the dominoes so that when we push both input A and B, the dominoes of C also fall down. If we push only one (A or B), the others will block the way and white dominoes will not fall down. This is a physical **AND gate**.
+
+Computers use these gates to understand and process binary numbers. In binary, instead of using 1, 10, 100, 1000... as our values (which are POWERS of 10), we instead use POWERS of 2. These are 1, 2, 4, 8, 16, 32... (doubling every time). With these, we can represent any number, and we will only ever need 0 or 1 in each column.
+
+**Example:**
+$$101101_2 = 45_{10} = (1 \times 32) + (0 \times 16) + (1 \times 8) + (1 \times 4) + (0 \times 2) + (1 \times 1)$$
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+Here is the OR gate's truth table. Now arrange the dominoes so that while giving input A and B we get the result C:
+
+$$\begin{array}{|c|c||c|}
+\hline
+\textbf{A} & \textbf{B} & \textbf{C (Output)} \\
+\hline
+0 & 0 & 0 \\
+\hline
+0 & 1 & 1 \\
+\hline
+1 & 0 & 1 \\
+\hline
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+<center>
+<img src="COURSE/architecture/domino_computer/domino_computer_5.png" alt="OR Gate Truth Table" height="300"/>
+</center>
+
+<question smallbox>
+csq_prompt = 'For the OR gate, how should you arrange the dominoes differently from the AND gate? Describe briefly: '
+csq_soln = 'arrange so either input can trigger the output'
+csq_check_function = lambda sub, sol: 'either' in sub.lower() or 'one' in sub.lower() or 'any' in sub.lower() or 'parallel' in sub.lower() or 'both' in sub.lower()
+csq_size = 50
+csq_explanation = 'For an OR gate, you need to arrange the dominoes so that EITHER input A OR input B (or both) can trigger the output. This is different from AND gate where BOTH inputs must be triggered. You can do this by creating parallel paths from each input to the output.'
+</question>
+
+There is a **NOT gate** which gives the opposite value of input. This means if we give 1 as input it gives 0 as output and vice versa. Now if we combine NOT and AND gate, their combination gives a result opposite to the AND gate. This combination is called a **NAND gate**.
+
+<question smallbox>
+csq_prompt = 'Draw the truth table for NAND gate with two inputs A and B. Enter the outputs for (0,0), (0,1), (1,0), (1,1) separated by commas: '
+csq_soln = '1,1,1,0'
+csq_check_function = lambda sub, sol: sub.strip().replace(' ', '') == '1,1,1,0' or sub.strip().replace(' ', '') == '1110'
+csq_size = 15
+csq_explanation = '''The NAND gate is NOT + AND. It gives the opposite of AND:
+
+| A | B | AND | NAND |
+|---|---|-----|------|
+| 0 | 0 |  0  |  1   |
+| 0 | 1 |  0  |  1   |
+| 1 | 0 |  0  |  1   |
+| 1 | 1 |  1  |  0   |
+
+So the NAND outputs are: 1, 1, 1, 0'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'In the domino AND gate, what does a standing domino represent?'
+csq_options = [
+    '1 (ON/True)',
+    '0 (OFF/False)',
+    'Neither 0 nor 1',
+    'Both 0 and 1'
+]
+csq_soln = '1 (ON/True)'
+csq_explanation = 'In our domino computer, a standing domino represents 1 (ON/True), and a fallen domino represents 0 (OFF/False). This is similar to how computers use electrical signals — high voltage for 1 and low voltage for 0.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why does the AND gate output 0 when only one input is pushed?'
+csq_options = [
+    'Because the other standing domino blocks the path to the output',
+    'Because dominoes can only fall in one direction',
+    'Because the AND gate is broken',
+    'Because binary numbers don\'t work that way'
+]
+csq_soln = 'Because the other standing domino blocks the path to the output'
+csq_explanation = 'In the AND gate arrangement, BOTH inputs must be pushed for the chain reaction to reach the output. If only one input is pushed, the other standing domino blocks the path, preventing the output dominoes from falling. This physically demonstrates AND logic: output is 1 only when A AND B are both 1.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'Convert the binary number 1011 to decimal:<br/>'
+csq_soln = 11
+csq_explanation = '''To convert binary 1011 to decimal:
+$1011_2 = (1 \\times 8) + (0 \\times 4) + (1 \\times 2) + (1 \\times 1)$
+$= 8 + 0 + 2 + 1 = 11$
+
+So $1011_2 = 11_{10}$'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Which statement about the NAND gate is true?'
+csq_options = [
+    'NAND is a universal gate — you can build any other gate using only NAND gates',
+    'NAND gate can only be used for addition',
+    'NAND gate always outputs 0',
+    'NAND gate requires three inputs'
+]
+csq_soln = 'NAND is a universal gate — you can build any other gate using only NAND gates'
+csq_explanation = 'The NAND gate is special because it\'s a "universal gate" — you can create AND, OR, NOT, XOR, and any other logic gate using combinations of only NAND gates! This is why NAND gates are commonly used in computer chip design.'
+</question>

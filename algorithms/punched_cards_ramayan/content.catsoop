@@ -1,0 +1,121 @@
+# Ramayana – The Story of Card Sorting
+
+<catsoop-section>Introduction</catsoop-section>
+
+The story "Ramayana – The Story of Sorting" connects ancient Indian mythology with modern computer logic. In this activity, students learn the concept of binary sorting through storytelling. The teacher uses 52 cards representing key events of the Ramayana and demonstrates how sorting can be done using binary holes — the same principle used by computers for organizing data. This manual helps learners understand how computational thinking, binary coding, and sequencing can be explored through creative and cultural storytelling.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 52 cards (each representing one event from the Ramayana)
+- Hole punch (to make 5 small holes on each card in binary pattern)
+- A thin stick or skewer (used for sorting)
+- Labels or numbers for each card (1 to 52)
+- Table or flat surface for sorting demonstration
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Prepare 52 cards. Each card should represent one event from the Ramayana story — from Ram's birth to Return to Ayodhya.
+
+2. Punch five holes in each card. The pattern of holes will represent binary codes (0s and 1s) for their sequence number.
+
+3. Mix (shuffle) all the cards randomly to create chaos.
+
+4. Take a thin stick and insert it through the first hole column.
+
+5. Some cards will lift up (representing binary 1s), and some will stay down (representing binary 0s).
+
+6. Separate the lifted cards and place them on top of the remaining ones.
+
+7. Now, repeat the process for the second, third, fourth, and fifth holes one by one.
+
+8. After the last hole, you'll notice something magical — the entire story of Ramayana will be sorted perfectly from beginning to end.
+
+9. Discuss how this simple physical sorting process is the same logic computers use for arranging data in order.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When the teacher places the stick through the holes, the cards are divided based on binary code patterns.
+
+Each hole represents one **bit** (0 or 1), and together they create a binary sorting sequence.
+
+By repeating the sorting through all five holes, the cards automatically arrange in the correct order from Ram's Birth to Victory over Ravan.
+
+This activity demonstrates how computers use **binary logic** and **sorting algorithms** to organize information quickly and efficiently.
+
+**Why 5 holes?**
+
+With 5 holes (5 bits), we can represent $2^5 = 32$ unique numbers. But we have 52 cards! Actually, using the radix sort technique with 5 passes through the holes (processing from least significant bit to most significant bit), we can correctly sort up to 64 numbers ($2^6 = 64$). The 5 holes allow us to encode numbers 1-52 in binary.
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What do the five holes on each card represent?'
+csq_options = [
+    'Five binary bits (0s and 1s) that encode the card\'s sequence number',
+    'Five characters from Ramayana',
+    'Five colors',
+    'Five random patterns'
+]
+csq_soln = 'Five binary bits (0s and 1s) that encode the card\'s sequence number'
+csq_explanation = 'The five holes represent five binary bits. Each hole can be either punched (representing 1) or not punched (representing 0). Together, these 5 bits encode the sequence number of each card in binary form.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How does the stick help in sorting the cards?'
+csq_options = [
+    'It separates cards based on whether they have a hole (1) or no hole (0) at a specific position',
+    'It punches new holes',
+    'It shuffles the cards',
+    'It marks the cards'
+]
+csq_soln = 'It separates cards based on whether they have a hole (1) or no hole (0) at a specific position'
+csq_explanation = 'When you insert the stick through a hole position, cards with a hole (1) at that position will lift up with the stick, while cards without a hole (0) will stay down. This physical separation is the basis of binary sorting.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Which computer concept is demonstrated through this activity?'
+csq_options = [
+    'Binary sorting / Radix sort algorithm',
+    'Drawing graphics',
+    'Playing music',
+    'Sending emails'
+]
+csq_soln = 'Binary sorting / Radix sort algorithm'
+csq_explanation = 'This activity demonstrates the Radix Sort algorithm, which sorts data by processing individual bits (or digits) one at a time. By going through each hole position from least significant to most significant, we achieve a complete sort — exactly how computers sort binary data.'
+</question>
+
+<question smallbox>
+csq_prompt = 'What is the connection between binary codes and sorting? '
+csq_soln = 'binary codes assign unique numbers that can be sorted bit by bit'
+csq_check_function = lambda sub, sol: 'binary' in sub.lower() or 'bit' in sub.lower() or 'order' in sub.lower() or 'sequence' in sub.lower() or 'number' in sub.lower()
+csq_size = 50
+csq_explanation = 'Binary codes assign each card a unique number in binary form. By sorting based on each bit position (hole), we can arrange all cards in numerical order. This is because binary numbers, when compared bit by bit from least to most significant, naturally fall into ascending order.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How is this activity similar to how computers organize data?'
+csq_options = [
+    'Computers also use binary (0s and 1s) to represent and sort data using similar algorithms',
+    'Computers use physical cards',
+    'Computers tell stories',
+    'There is no similarity'
+]
+csq_soln = 'Computers also use binary (0s and 1s) to represent and sort data using similar algorithms'
+csq_explanation = 'Computers store all data as binary (0s and 1s) and use sorting algorithms like Radix Sort to organize data. The physical process of separating cards with the stick is exactly what happens electronically inside a computer when it sorts data.'
+</question>
+
+<question smallbox>
+csq_prompt = 'What new idea did the children learn about stories and logic? '
+csq_soln = 'stories can be organized using computer logic'
+csq_check_function = lambda sub, sol: 'logic' in sub.lower() or 'order' in sub.lower() or 'sequence' in sub.lower() or 'sort' in sub.lower() or 'computer' in sub.lower() or 'binary' in sub.lower()
+csq_size = 50
+csq_explanation = 'Children learned that stories have a logical sequence, and this sequence can be represented using numbers and binary codes. Computational thinking can be applied to organize any sequential information — including cultural stories like the Ramayana!'
+</question>
+
+<question smallbox>
+csq_prompt = 'Can you think of another story that could be sorted using this same binary logic? Name one example: '
+csq_soln = 'Mahabharata'
+csq_check_function = lambda sub, sol: len(sub.strip()) > 2
+csq_size = 30
+csq_explanation = 'Any story with sequential events can be sorted using binary logic! Examples include: Mahabharata, Panchatantra tales, Harry Potter series, historical events, science experiment steps, recipe instructions, or even your daily routine. As long as events have a specific order, they can be encoded in binary and sorted.'
+</question>

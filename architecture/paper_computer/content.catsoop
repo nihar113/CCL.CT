@@ -1,0 +1,137 @@
+# 1-Bit Half Adder
+
+<catsoop-section>Introduction</catsoop-section>
+
+The 1-bit Half Adder chart demonstrates how a computer performs binary addition using the principles of computational thinking. It visually shows how two binary inputs (A and B) are added to produce a **SUM** and a **CARRY** output.
+
+The operation is based on logic gates, where the **XOR gate** gives the SUM and the **AND gate** gives the CARRY. This simple circuit helps students understand how computers process information in binary form and how mathematical operations are executed at the hardware level.
+
+It also encourages analytical and logical thinking by connecting abstract binary concepts with real-life computational processes.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- 1-bit Half Adder chart
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Look at the chart. You will see two numbers — A and B.
+
+2. Each number can be 0 or 1 only.
+
+3. The chart shows how a computer adds these two numbers.
+
+4. The XOR gate gives the SUM (the answer).
+
+5. The AND gate gives the CARRY (the extra number).
+
+6. Use this table to check the result:
+
+$$\begin{array}{|c|c||c|c|}
+\hline
+\textbf{A} & \textbf{B} & \textbf{SUM} & \textbf{CARRY} \\
+\hline
+0 & 0 & 0 & 0 \\
+\hline
+0 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 1 \\
+\hline
+\end{array}$$
+
+7. Follow the path shown in the chart.
+
+8. Try different values of A and B and see what happens.
+
+<center>
+<img src="COURSE/architecture/paper_computer/paper_computer_1.png" alt="1-Bit Half Adder Instructions" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+This chart shows how a computer adds two binary numbers (0s and 1s) using logic gates. It visually represents the working of a 1-bit Half Adder, where two inputs — **Input A** and **Input B** — are processed to give two outputs: **SUM** and **CARRY**.
+
+The chart explains that:
+- The **XOR gate** produces the SUM
+- The **AND gate** produces the CARRY
+
+In short, this chart demonstrates the basic principle of binary addition and helps students understand how computers perform calculations step by step using logical operations.
+
+<center>
+<img src="COURSE/architecture/paper_computer/paper_computer_2.png" alt="1-Bit Half Adder Explanation" height="400"/>
+</center>
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What is the main function of a 1-bit Half Adder?'
+csq_options = [
+    'To add two single binary digits and produce a SUM and CARRY',
+    'To multiply two numbers',
+    'To subtract binary numbers',
+    'To divide numbers in half'
+]
+csq_soln = 'To add two single binary digits and produce a SUM and CARRY'
+csq_explanation = 'A 1-bit Half Adder takes two single binary digits (0 or 1) as inputs and produces two outputs: the SUM (result of addition) and the CARRY (overflow to the next position). It\'s the basic building block for all arithmetic operations in computers!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Which logic gates are used in a Half Adder circuit?'
+csq_options = [
+    'XOR gate (for SUM) and AND gate (for CARRY)',
+    'OR gate and NOT gate',
+    'NAND gate only',
+    'NOR gate and XOR gate'
+]
+csq_soln = 'XOR gate (for SUM) and AND gate (for CARRY)'
+csq_explanation = 'A Half Adder uses two logic gates: 1) XOR (Exclusive OR) gate to calculate the SUM — it outputs 1 only when inputs are different. 2) AND gate to calculate the CARRY — it outputs 1 only when both inputs are 1.'
+</question>
+
+<question smallbox>
+csq_prompt = 'If Input A = 0 and Input B = 1, what will be the SUM and CARRY outputs? (Format: SUM,CARRY) '
+csq_soln = '1,0'
+csq_check_function = lambda sub, sol: sub.strip().replace(' ', '') == '1,0' or 'sum=1' in sub.lower().replace(' ', '') or ('1' in sub and '0' in sub and sub.index('1') < sub.index('0'))
+csq_size = 10
+csq_explanation = 'When A = 0 and B = 1: SUM = A XOR B = 0 XOR 1 = 1 (inputs are different, so output is 1). CARRY = A AND B = 0 AND 1 = 0 (both inputs are not 1, so output is 0). Result: SUM = 1, CARRY = 0.'
+</question>
+
+<question smallbox>
+csq_prompt = 'When both inputs are 1 (A=1, B=1), what are the SUM and CARRY? (Format: SUM,CARRY) '
+csq_soln = '0,1'
+csq_check_function = lambda sub, sol: sub.strip().replace(' ', '') == '0,1' or 'sum=0' in sub.lower().replace(' ', '') or ('0' in sub and '1' in sub and sub.index('0') < sub.index('1'))
+csq_size = 10
+csq_explanation = 'When A = 1 and B = 1: SUM = A XOR B = 1 XOR 1 = 0 (inputs are same, so XOR output is 0). CARRY = A AND B = 1 AND 1 = 1 (both inputs are 1, so AND output is 1). This represents 1 + 1 = 10 in binary (0 with carry 1)!'
+</question>
+
+<question smallbox>
+csq_prompt = 'Write the Boolean expressions for SUM and CARRY: '
+csq_soln = 'SUM = A XOR B, CARRY = A AND B'
+csq_check_function = lambda sub, sol: ('xor' in sub.lower() or '⊕' in sub) and ('and' in sub.lower() or '∧' in sub or '·' in sub)
+csq_size = 40
+csq_explanation = 'The Boolean expressions are: SUM = A ⊕ B (A XOR B) and CARRY = A · B (A AND B). These can also be written as: SUM = A\'B + AB\' (using basic gates) and CARRY = AB.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'How does this chart show the working of a computer in binary form?'
+csq_options = [
+    'It demonstrates how computers use only 0s and 1s with logic gates to perform arithmetic',
+    'It shows how computers display colors',
+    'It explains how keyboards work',
+    'It shows how computers connect to the internet'
+]
+csq_soln = 'It demonstrates how computers use only 0s and 1s with logic gates to perform arithmetic'
+csq_explanation = 'This chart shows that computers work entirely in binary (0s and 1s) and use combinations of simple logic gates (AND, OR, XOR, NOT) to perform all calculations. Even complex operations like multiplication and division are built from many half adders and full adders working together!'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why is this activity helpful for learning computational thinking?'
+csq_options = [
+    'It breaks down complex computer operations into simple logical steps that can be understood and traced',
+    'It teaches you how to type faster',
+    'It helps memorize multiplication tables',
+    'It improves handwriting skills'
+]
+csq_soln = 'It breaks down complex computer operations into simple logical steps that can be understood and traced'
+csq_explanation = 'Computational thinking involves breaking down complex problems into smaller, manageable steps. This activity demonstrates exactly that — it shows how something as complex as "addition" is broken down into simple logical operations (XOR and AND) that can be traced step by step. Understanding this helps you think like a computer!'
+</question>

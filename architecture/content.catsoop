@@ -1,0 +1,35 @@
+# Module 4: Architecture
+
+**Computer Architecture** explores the physical building blocks that make computation possible. From ancient calculating tools to modern processors, humans have invented increasingly sophisticated machines to automate calculation and logical reasoning.
+
+In this module, you'll build and explore mechanical and physical computing devices—machines that compute without electricity! These hands-on activities reveal the fundamental principles underlying all computers: arithmetic operations, logic gates, and memory.
+
+Understanding architecture helps us:
+- Appreciate the ingenuity behind computing machines
+- See how simple components combine to create complex behavior
+- Understand that "computation" doesn't require electricity
+- Build intuition for how modern computers work at the hardware level
+
+---
+
+## Calculators and Logic Gates
+
+Activities exploring mechanical and physical devices that perform calculation and logical operations:
+
+- [Slide Adding Machine](CURRENT/slide_adding_machine) — Build a mechanical device that performs addition using sliding mechanisms
+- [Paper Computer](CURRENT/paper_computer) — Create a working computer simulation using only paper and manual operations
+- [Domino Computer](CURRENT/domino_computer) — Construct logic gates and circuits using falling dominoes
+- [Pulley Computer](CURRENT/pulley_computer) — Use pulleys and weights to perform calculations through mechanical advantage
+
+---
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Trace the history of computing from mechanical devices to modern computers
+* Build mechanical devices that perform arithmetic operations
+* Construct logic gates using physical materials (dominoes, pulleys, etc.)
+* Understand how simple components combine to create computational systems
+* Explain the connection between physical mechanisms and digital logic
+* Appreciate that computation is about information processing, not just electronics

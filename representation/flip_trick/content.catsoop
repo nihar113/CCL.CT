@@ -1,0 +1,132 @@
+# Flip Trick
+
+<catsoop-section>Introduction</catsoop-section>
+
+When data is stored on a disk or transmitted from one computer to another, we usually assume that it doesn't get changed in the process. But sometimes, things go wrong, and the data is changed accidentally. This is a magic trick in which the demonstrator can magically figure out which one out of dozens of cards has been turned over, using the same methods that computers use to determine if an error has occurred in data transmission and storage.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- A deck of cards
+
+<center>
+<img src="COURSE/representation/flip_trick/flip_trick_material.png" alt="Materials Required" height="300"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Ask a participant to arrange the cards randomly in a 5×5 grid, either face-up or face-down—it's their choice.
+
+2. To make it trickier, add one more row and one more column, creating a 6×6 grid. These extra cards are essential for the trick!
+
+3. While adding the extra row and column, ensure each row and column has an even number of face-up cards (remember, zero is also even). Place the last card in the lower right corner of the 6×6 grid. These cards are known as the "parity" cards.
+
+4. Close your eyes and have someone flip any one card on the grid.
+
+5. When you open your eyes, you can figure out which card was flipped.
+
+<center>
+<img src="COURSE/representation/flip_trick/flip_trick_ins_1.png" alt="Instruction Step 1" height="300"/>
+<img src="COURSE/representation/flip_trick/flip_trick_ins_2.png" alt="Instruction Step 2" height="300"/>
+</center>
+<center>
+<img src="COURSE/representation/flip_trick/flip_trick_ins_3.png" alt="Instruction Step 3" height="300"/>
+<img src="COURSE/representation/flip_trick/flip_trick_ins_4.png" alt="Instruction Step 4" height="300"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+After a card is flipped, its row and column will have an odd number of face-up cards. The spot where the odd row and odd column intersect is the location of the flipped card.
+
+An interesting thing to notice is that when you place the last card in the bottom-right corner, the even number of face-up cards in the column above automatically ensures the row to its left also has an even count.
+
+Computers use a similar idea by adding a **"parity" bit** to check if data is correct during storage and transmission. This extra bit helps detect errors and prevent corruption.
+
+<center>
+<img src="COURSE/representation/flip_trick/flip_trick_what.png" alt="What's Happening Illustration" height="400"/>
+</center>
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Which card is flipped if the arrangement is the same as shown in the image above? Enter the row and column (e.g., 3,4): '
+csq_soln = '3,4'
+csq_check_function = lambda sub, sol: sub.strip().replace(' ', '') == sol or sub.strip().replace(' ', '') == '4,3'
+csq_size = 10
+csq_explanation = 'Find the row with an odd number of face-up cards and the column with an odd number of face-up cards. The flipped card is at their intersection.'
+</question>
+
+<question smallbox>
+csq_prompt = 'How do you modify the trick for larger grids like 7×7? '
+csq_soln = 'add an extra row and column to make it 8x8'
+csq_check_function = lambda sub, sol: 'row' in sub.lower() or 'column' in sub.lower() or '8' in sub or 'extra' in sub.lower() or 'parity' in sub.lower()
+csq_size = 50
+csq_explanation = 'For a 7×7 grid, you would add one extra row and one extra column to make it 8×8. The parity cards in the extra row and column ensure each row and column has an even number of face-up cards.'
+</question>
+
+<question smallbox>
+csq_prompt = 'How do you modify the trick if rectangular grids like 5×6 or 3×4 are used instead of square grids? '
+csq_soln = 'add one extra row and one extra column'
+csq_check_function = lambda sub, sol: 'row' in sub.lower() or 'column' in sub.lower() or 'extra' in sub.lower() or 'parity' in sub.lower() or 'same' in sub.lower()
+csq_size = 50
+csq_explanation = 'The trick works the same way for rectangular grids! For a 5×6 grid, add one extra row and one extra column to make it 6×7. The method remains unchanged—ensure each row and column has an even number of face-up cards.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'If a 7×7 grid is used, how many extra parity cards would be needed?<br/>'
+csq_soln = 15
+csq_explanation = '''For a 7×7 grid, you need to add:
+- 1 extra row of 7 cards
+- 1 extra column of 7 cards
+- 1 corner card
+
+But wait! The corner card is shared by both the extra row and extra column.
+
+So the total extra cards = 7 (row) + 7 (column) + 1 (corner) = 15 cards
+
+This creates an 8×8 grid from the original 7×7 grid.'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What happens to the trick if two cards are flipped instead of one? Will the trick still work?'
+csq_options = [
+    'No, the trick won\'t work because there could be 0, 1, or 2 rows/columns with odd parity',
+    'Yes, the trick will work exactly the same way',
+    'Yes, but only if the two cards are in the same row',
+    'Yes, but only if the two cards are in the same column'
+]
+csq_soln = 'No, the trick won\'t work because there could be 0, 1, or 2 rows/columns with odd parity'
+csq_explanation = '''If two cards are flipped, the trick becomes unreliable:
+- If both cards are in the same row, that row still has even parity, but two columns have odd parity
+- If both cards are in the same column, that column still has even parity, but two rows have odd parity
+- If cards are in different rows and columns, two rows and two columns will have odd parity
+
+The single-bit parity method can only detect (not locate) an odd number of errors. This is why more sophisticated error-correction codes are used in practice!'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Will it work if you perform the trick with odd parity (odd number of face-up cards in rows or columns)?'
+csq_options = [
+    'Yes, the trick will work the same way—just look for even parity instead',
+    'No, the trick only works with even parity',
+    'Yes, but only for square grids',
+    'No, odd parity is impossible to achieve'
+]
+csq_soln = 'Yes, the trick will work the same way—just look for even parity instead'
+csq_explanation = 'The trick works with odd parity too! If you set up the grid so each row and column has an odd number of face-up cards, then after a flip, the affected row and column will have even parity. You just look for the row and column with even count instead of odd count. The principle is the same—detecting a change in parity.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'In data transmission, what is a parity bit used for?'
+csq_options = [
+    'Detect errors',
+    'Speed up communication',
+    'Encrypt data',
+    'Reduce file size'
+]
+csq_soln = 'Detect errors'
+csq_explanation = 'A parity bit is used to detect errors in data transmission. By adding an extra bit that makes the total number of 1s either even (even parity) or odd (odd parity), the receiver can check if the data was corrupted during transmission. If the parity doesn\'t match, an error has occurred!'
+</question>
+
+<center>
+<img src="COURSE/representation/flip_trick/flip_trick_check.png" alt="Check Your Understanding" height="400"/>
+</center>

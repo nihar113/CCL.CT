@@ -1,0 +1,93 @@
+# Up-It-Up Cube Puzzle
+
+<catsoop-section>Introduction</catsoop-section>
+
+This cube-based challenge consists of eight cubes nestled inside a 3×3 box. The objective is to flip each cube from displaying a one-sided IIT Gandhinagar (flowered) logo to revealing a hexagonal logo of CCL, using minimal moves.
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- MDF sheet
+
+<center>
+<img src="COURSE/algorithms/up_it_up/up_it_up_1.png" alt="Up-It-Up Materials" height="400"/>
+</center>
+
+<catsoop-section>Instructions</catsoop-section>
+
+**Assembly:**
+
+Take out all the pieces from the MDF sheet. Join 6 faces to form a cube, then repeat with all 48 small square pieces to create 8 small cubes, ensuring the **IITGN logo** and **CCL logo** are on opposite sides of each cube. Connect 2 square pieces and 8 rectangular pieces to construct a box large enough to contain all the cubes.
+
+**How to Play:**
+
+The puzzle begins with 8 cubes inside the box, leaving one central space empty. Movement initiates with the middle cubes of each side, unlocking adjacent positions with each move.
+
+The aim is to rearrange the cubes until each side displays the CCL logo, replacing the IIT Gandhinagar logo if it was previously on top, or vice versa. The middle space should remain empty.
+
+<center>
+<img src="COURSE/algorithms/up_it_up/up_it_up_2.png" alt="Up-It-Up Instructions" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+Critical thinking is essential to achieve this goal efficiently. Although it's observed that the puzzle can be solved in at least **38 moves**, players can aim to minimize their own number of moves. Efforts are directed toward reducing the number of moves required with each attempt.
+
+The puzzle's design necessitates a methodical approach, with only one cube able to be moved at a time and one empty space available. To achieve the desired configuration on the top face, each cube ideally needs to be flipped at least twice, requiring precise initial moves.
+
+This puzzle demonstrates several computational concepts:
+
+- **State space search** — Finding a path from initial state to goal state
+- **Sliding puzzle mechanics** — Similar to the classic 15-puzzle
+- **Optimization** — Minimizing the number of moves
+- **Constraint satisfaction** — Only one cube can move at a time into the empty space
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question pythonliteral>
+csq_prompt = '1. In the very first move, how many cubes can you move?<br/>'
+csq_soln = 4
+csq_explanation = 'In the first move, you can move any of the 4 middle cubes on each side of the 3×3 grid. The corner cubes cannot move initially because they are not adjacent to the empty center space. Only the cubes directly next to the empty space can slide into it.'
+</question>
+
+<question pythonliteral>
+csq_prompt = '2. In the second move, how many cubes can you move?<br/>'
+csq_soln = 2
+csq_explanation = 'After the first move, the empty space moves from the center to one of the edge positions. From an edge position, only 2 cubes are adjacent to the empty space (one from the center area and one corner cube). So you can move 2 cubes in the second move.'
+</question>
+
+<question smallbox>
+csq_prompt = '3. Solve the cube such that only the IIT LOGO on the corner pieces of the puzzle are seen. Describe your strategy: '
+csq_soln = 'flip corner cubes to show IIT logo'
+csq_check_function = lambda sub, sol: 'corner' in sub.lower() or 'flip' in sub.lower() or 'rotate' in sub.lower() or 'move' in sub.lower()
+csq_size = 50
+csq_explanation = 'To show only IIT logos on corner pieces: 1) Focus on positioning corner cubes so they can be flipped to show the IIT logo. 2) Use the edge cubes to help maneuver corners into position. 3) Remember that each cube needs to be flipped the right number of times to show the desired face. This requires careful planning of the sequence of moves!'
+</question>
+
+<question smallbox>
+csq_prompt = '4. Try to solve this puzzle with an operation: first sliding and in the next turn rolling the cube instead of just rotating cubes. Describe what changes: '
+csq_soln = 'alternating slide and roll changes the strategy'
+csq_check_function = lambda sub, sol: 'slide' in sub.lower() or 'roll' in sub.lower() or 'different' in sub.lower() or 'change' in sub.lower() or 'harder' in sub.lower() or 'easier' in sub.lower()
+csq_size = 50
+csq_explanation = '''When alternating between sliding and rolling:
+- **Sliding** moves a cube without changing which face is up
+- **Rolling** flips the cube, changing which logo faces up
+
+This variation adds complexity because:
+1. You must plan which moves should be slides vs rolls
+2. The final orientation depends on HOW you moved, not just WHERE
+3. It may take more or fewer moves depending on your strategy
+
+This is similar to how different algorithms can solve the same problem with varying efficiency!'''
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why is the empty center space important for this puzzle?'
+csq_options = [
+    'It allows cubes to slide into that position, enabling movement and rearrangement',
+    'It makes the puzzle look nicer',
+    'It reduces the number of cubes needed',
+    'It has no purpose'
+]
+csq_soln = 'It allows cubes to slide into that position, enabling movement and rearrangement'
+csq_explanation = 'The empty center space is crucial! Without it, no cube could move — they would all be locked in place. The empty space creates the "room to maneuver" that makes the puzzle solvable. This is the same principle used in the classic 15-puzzle and other sliding block puzzles.'
+</question>

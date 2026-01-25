@@ -1,0 +1,40 @@
+# Module 3: AI & ML
+
+**Artificial Intelligence (AI)** and **Machine Learning (ML)** are transforming how computers solve problems. Instead of following explicit instructions for every situation, AI systems can reason logically, make decisions based on patterns, and even learn from experience.
+
+In this module, you'll explore the foundational concepts of AI and ML through hands-on unplugged activities. You'll discover how machines can "think" using logic, how they make decisions, and how simple learning mechanisms can lead to surprisingly intelligent behavior.
+
+Understanding AI & ML helps us:
+- Recognize how computers can simulate reasoning and learning
+- Appreciate both the power and limitations of AI systems
+- Think critically about AI in our daily lives
+- Build intuition for how machines "learn" from data
+
+---
+
+## Logical Reasoning
+
+Activities exploring how computers use logic to reason and solve problems:
+
+- [Punched Cards (Logic)](CURRENT/punched_cards_logic) — Use punched cards to implement logical operations and Boolean reasoning
+
+---
+
+## Machine Learning
+
+Activities exploring how machines can learn from experience:
+
+- [Decision Tree Unplugged](CURRENT/decision_tree) — Create and use decision trees to classify objects and make predictions
+
+---
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+* Understand the basics of logical reasoning in computing
+* Implement simple Boolean logic using physical materials
+* Explain how machines can learn from trial and error
+* Build and use decision trees for classification
+* Describe the fundamentals of how machines learn patterns from data
+* Recognize AI and ML concepts in everyday technology

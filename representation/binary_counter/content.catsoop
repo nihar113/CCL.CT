@@ -1,0 +1,103 @@
+# Binary Counter
+
+<catsoop-section>Introduction</catsoop-section>
+
+Computers count in a special way using only 0 and 1 — this is called the binary system. Each 0 or 1 is called a bit. In this activity, you will make a Binary Counter that works by flipping paper flaps to show how numbers increase in binary. It's an easy and fun way to see how computers count and store data!
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Chart paper or cardboard (A4 size)
+- 4–6 paper strips
+- Glue, stapler, or tape
+- Marker pens (black and red)
+- Ruler and pencil
+- Labels – Bit 1, Bit 2, Bit 3…
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. **Make Bit Flaps:**
+   Cut 4 or more paper strips. Write 0 on one side and 1 on the back side of each strip. These flaps will act as the bits.
+
+2. **Attach the Flaps:**
+   Paste or staple each strip on the chart paper so they can flip up and down. Arrange them side by side and label from right to left as Bit 0, Bit 1, Bit 2, Bit 3.
+
+3. **Start Counting:**
+   Begin with all showing 0 (0000).
+   - Flip the rightmost bit (Bit 0) to 1 — you now have 0001 = 1.
+   - Flip back Bit 0 to 0 and turn Bit 1 to 1 — 0010 = 2.
+   - Continue flipping to count like this:
+
+   $$0000 \rightarrow 0001 \rightarrow 0010 \rightarrow 0011 \rightarrow 0100 \rightarrow 0101 \rightarrow 0110 \rightarrow 0111 \rightarrow 1000$$
+
+4. **Color Coding (Optional):**
+   Color 0 side blue and 1 side red to show OFF and ON states clearly.
+
+<center>
+<img src="COURSE/representation/binary_counter/binary_counter_1.png" alt="Binary Counter Step 1" height="400"/>
+<img src="COURSE/representation/binary_counter/binary_counter_2.png" alt="Binary Counter Step 2" height="400"/>
+<img src="COURSE/representation/binary_counter/binary_counter_3.png" alt="Binary Counter Step 3" height="400"/>
+</center>
+
+<catsoop-section>What's Happening</catsoop-section>
+
+When you flip a flap from 0 to 1, it adds a value to your total count.
+
+Each bit has a fixed value:
+- Bit 0 = 1
+- Bit 1 = 2
+- Bit 2 = 4
+- Bit 3 = 8
+
+When bits flip, computers add these values together to make bigger numbers. This is how binary counting works — it's the language of computers!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question multiplechoice>
+csq_prompt = 'What do 0 and 1 represent in binary?'
+csq_options = [
+    'OFF and ON states',
+    'Even and Odd numbers',
+    'Positive and Negative numbers',
+    'Small and Large numbers'
+]
+csq_soln = 'OFF and ON states'
+csq_explanation = 'In binary, 0 represents the OFF state and 1 represents the ON state. This is how computers store and process all information.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'What does each bit stand for?'
+csq_options = [
+    'A power of 2 (1, 2, 4, 8, ...)',
+    'A power of 10 (1, 10, 100, ...)',
+    'A fixed value of 1',
+    'A random number'
+]
+csq_soln = 'A power of 2 (1, 2, 4, 8, ...)'
+csq_explanation = 'Each bit position represents a power of 2. From right to left: Bit 0 = $2^0$ = 1, Bit 1 = $2^1$ = 2, Bit 2 = $2^2$ = 4, Bit 3 = $2^3$ = 8, and so on.'
+</question>
+
+<question pythonliteral>
+csq_prompt = 'How many numbers can a 4-bit counter make?<br/>'
+csq_soln = 16
+csq_explanation = 'A 4-bit counter can represent $2^4 = 16$ different numbers, from 0 (0000) to 15 (1111).'
+</question>
+
+<question smallbox>
+csq_prompt = 'What number comes after 0111 in binary? Enter the 4-digit binary number: '
+csq_soln = '1000'
+csq_check_function = lambda sub, sol: sub.strip() == sol
+csq_size = 10
+csq_explanation = '0111 in binary is 7 in decimal. The next number is 8, which is 1000 in binary. When all bits are 1, they all flip to 0 and the next higher bit becomes 1.'
+</question>
+
+<question multiplechoice>
+csq_prompt = 'Why do computers use binary counting instead of normal numbers?'
+csq_options = [
+    'Because electronic circuits can easily represent two states (ON/OFF)',
+    'Because binary is faster to write',
+    'Because humans prefer binary',
+    'Because decimal numbers are too complicated'
+]
+csq_soln = 'Because electronic circuits can easily represent two states (ON/OFF)'
+csq_explanation = 'Computers use binary because electronic circuits can easily distinguish between two states: ON (electricity flowing, represented as 1) and OFF (no electricity, represented as 0). This makes binary reliable and efficient for digital systems.'
+</question>

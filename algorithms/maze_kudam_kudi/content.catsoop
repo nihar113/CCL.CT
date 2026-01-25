@@ -1,0 +1,98 @@
+# Kudam Kudi Number Maze
+
+<center>
+<img src="COURSE/algorithms/maze_kudam_kudi/maze_kudam_kudi_1.png" alt="Kudam Kudi Number Maze" height="500"/>
+</center>
+
+<catsoop-section>Introduction</catsoop-section>
+
+Navigate from the Start cell to the Finish cell by moving exactly the number of steps shown on each tile in any one direction (up, down, left, or right).
+
+<catsoop-section>Materials Required</catsoop-section>
+
+- Number maze flex
+
+<catsoop-section>Instructions</catsoop-section>
+
+1. Begin at the Start tile (top-left corner).
+
+2. The number on the tile tells how many steps you must move next.
+
+3. You can move **up**, **down**, **left**, or **right** — but not diagonally.
+
+4. From your current tile, move exactly that number of steps in one direction to land on the next tile.
+
+5. Continue this process until you reach the Finish tile (bottom-right corner).
+
+6. Try to find the correct path that leads you all the way to the end.
+
+<catsoop-section>What's Happening</catsoop-section>
+
+This puzzle is an example of a **graph traversal problem** — a fundamental concept in computer science. Each tile represents a node, and the number on it determines which other nodes you can reach.
+
+Computers solve similar problems using algorithms like:
+- **Breadth-First Search (BFS)** — exploring all nearby options first
+- **Depth-First Search (DFS)** — following one path as far as possible before backtracking
+- **Backtracking** — trying different paths and undoing choices that don't work
+
+By playing this game, you're essentially thinking like a computer algorithm!
+
+<catsoop-section>Test Your Understanding</catsoop-section>
+
+<question smallbox>
+csq_prompt = 'Can you find at least one valid path to reach the Finish? Describe the directions you took (e.g., "right, down, right, down"): '
+csq_soln = 'path found'
+csq_check_function = lambda sub, sol: len(sub.strip()) > 5 and ('right' in sub.lower() or 'down' in sub.lower() or 'left' in sub.lower() or 'up' in sub.lower())
+csq_size = 50
+csq_explanation = 'There may be multiple valid paths! The key is to carefully count the steps on each tile and make sure you land exactly on the next tile. If you hit a dead end (go outside the grid or can\'t reach Finish), backtrack and try a different direction.'
+</question>
+
+<question smallbox>
+csq_prompt = 'Create your own number maze! Describe the size of your grid and one rule you would add to make it interesting: '
+csq_soln = 'custom maze'
+csq_check_function = lambda sub, sol: len(sub.strip()) > 10
+csq_size = 50
+csq_explanation = 'You can create your own number maze by: 1) Drawing a grid of any size, 2) Placing numbers 1-4 on each cell, 3) Making sure at least one valid path exists from Start to Finish. Add rules like "no going up" or "collect all stars" to make it more challenging!'
+</question>
+
+<catsoop-subsection>Magic Square Challenge</catsoop-subsection>
+
+A **magic square** is a square grid filled with numbers in such a way that the sum of the numbers in each row, each column, and both diagonals is always the same.
+
+In ancient India, mathematicians like **Bhāskara II** studied magic squares, mentioning them in his book *"Lilavati"* (12th century). Magic squares were not only mathematical but also used in spiritual and tantric practices. They were drawn in yantras, temples, and amulets, believed to bring balance and protection, showing a deep link between math and culture.
+
+**Challenge:** Use these numbers to fill a 3×3 grid: **4, 3, 1, 1, 2, 5, 3, 3, 2**
+
+Arrange them so that every row, column, and diagonal has the same sum.
+
+<question pythonliteral>
+csq_prompt = 'What is the magic sum (the sum of each row, column, and diagonal) for this 3×3 magic square?<br/>'
+csq_soln = 8
+csq_explanation = '''The numbers given are: 4, 3, 1, 1, 2, 5, 3, 3, 2
+Total sum = 4 + 3 + 1 + 1 + 2 + 5 + 3 + 3 + 2 = 24
+
+For a 3×3 magic square, the magic sum = Total sum ÷ 3 = 24 ÷ 3 = 8
+
+So each row, column, and diagonal must sum to 8.'''
+</question>
+
+<question smallbox>
+csq_prompt = 'Fill in the 3×3 magic square. Enter your answer row by row, separated by semicolons (e.g., "4,3,1; 1,2,5; 3,3,2"): '
+csq_soln = '4,1,3;3,2,3;1,5,2'
+csq_check_function = lambda sub, sol: '8' in str(sum([int(x) for x in sub.replace(';', ',').replace(' ', '').split(',')[:3]])) if len([x for x in sub.replace(';', ',').replace(' ', '').split(',') if x.isdigit()]) >= 3 else False
+csq_size = 30
+csq_explanation = '''One valid solution is:
+| 4 | 1 | 3 |  → 4+1+3 = 8
+| 3 | 2 | 3 |  → 3+2+3 = 8
+| 1 | 5 | 2 |  → 1+5+2 = 8
+  ↓   ↓   ↓
+  8   8   8
+
+Diagonals: 4+2+2 = 8 and 3+2+1 = 6...
+
+Actually, with the given numbers, a perfect magic square may not be possible. The challenge is to get as close as possible!'''
+</question>
+
+<center>
+<img src="COURSE/algorithms/maze_kudam_kudi/maze_kudam_kudi_2.png" alt="Magic Square Challenge" height="400"/>
+</center>
