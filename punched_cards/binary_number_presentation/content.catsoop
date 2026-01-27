@@ -1,0 +1,346 @@
+<style>
+.question {
+    background-color: #e6f3ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+</style>
+
+---
+
+<Center>
+
+## Decimal to Binary Conversion
+
+</Center>
+
+In our day to day life, we deal with the decimal number system where we use numbers: 0,1,2,3,4,5,6,7,8 and 9. Binary number system (popularly known as the language of computers) deals with only two numbers: 0 and 1. We can generate binary equivalent of any decimal number and vice-versa. An example of converting a decimal number (base 10) into its equivalent binary number (base 2) is presented here:
+
+1. Divide the decimal number by base (2) of the binary number.
+2. Note the remainder from the first step till the end of the division process.
+3. The remainders obtained in the form of 0 and 1 are written in order from the last step to the first step of division.
+
+Let's find out the binary equivalent of the decimal number 11.
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Divisor</th><th>Decimal Number</th><th>Corresponding Remainder</th></tr>
+<tr><td>2</td><td>11</td><td style="background-color: yellow;">1</td></tr>
+<tr><td>2</td><td>5</td><td style="background-color: yellow;">1</td></tr>
+<tr><td>2</td><td>2</td><td style="background-color: yellow;">0</td></tr>
+<tr><td></td><td style="background-color: yellow;">1</td><td></td></tr>
+</table>
+
+**Table 1**
+
+</Center>
+
+The highlighted cells are the elements of binary representation, which are written from bottom to top. So, 11 = (1011)₂.
+
+The binary number 1011 can be changed to its corresponding decimal number as:
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+<tr><td>2³ x 1</td><td>2² x 0</td><td>2¹ x 1</td><td>2⁰ x 1</td></tr>
+</table>
+
+**Table 2**
+
+</Center>
+
+Decimal number = A + B + C + D = 1 × 2³ + 0 × 2² + 1 × 2¹ + 1 × 2⁰
+= (1 × 8) + (0 × 4) + (1 × 2) + (1 × 1) = 8 + 2 + 1 = **11**
+
+
+<question multiplechoice>
+csq_prompt = "What will be the binary representation for decimal number 14?"
+csq_options = ["1010", "1100", "1110", "1111"]
+csq_soln = "1110"
+</question>
+
+
+The number of digits or bits in a binary number depends on the decimal number. For example, decimal numbers upto 7 can be arranged in a 3 bit binary number, decimal numbers from 8 upto 15 can be arranged in a 4 bit binary number, decimal numbers from 16 upto 31 can be arranged in a 5 bit binary number and so on. There are 26 alphabets in English, hence 5 set of holes in each card for sorting.
+
+<question multiplechoice>
+csq_prompt = "Consider you want to perform sorting activity with Hindi alphabets punched in binary form. How many holes on top in each card?"
+csq_options = ["5", "6", "8", "10"]
+csq_soln = "6"
+</question>
+
+
+<question multiplechoice>
+csq_prompt = "If you have 7 set of binary holes in the card, how many maximum cards possible?"
+csq_options = ["64", "100", "128", "256"]
+csq_soln = "128"
+</question>
+
+---
+
+<Center>
+
+## Punching Patterns
+
+</Center>
+
+Every alphabet can correspond to a decimal number and every decimal number can correspond to a binary number. Consequently, every alphabet can correspond to a binary number. The following table summarises it. For this, we generated the binary equivalent of every decimal number from 1 to 26.
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Letter</th><th>Corresponding Decimal Number</th><th>Corresponding Binary Number</th></tr>
+<tr><td>A</td><td>1</td><td>00001</td></tr>
+<tr><td>B</td><td>2</td><td>00010</td></tr>
+<tr><td>C</td><td>3</td><td>00011</td></tr>
+<tr><td>D</td><td>4</td><td>00100</td></tr>
+<tr><td>E</td><td>5</td><td>00101</td></tr>
+<tr><td>F</td><td>6</td><td>00110</td></tr>
+<tr><td>G</td><td>7</td><td>00111</td></tr>
+<tr><td>H</td><td>8</td><td>01000</td></tr>
+<tr><td>I</td><td>9</td><td>01001</td></tr>
+<tr><td>J</td><td>10</td><td>01010</td></tr>
+<tr><td>..</td><td>..</td><td>..</td></tr>
+<tr><td>..</td><td>..</td><td>..</td></tr>
+<tr><td>X</td><td>24</td><td>11000</td></tr>
+<tr><td>Y</td><td>25</td><td>11001</td></tr>
+<tr><td>Z</td><td>26</td><td>11010</td></tr>
+</table>
+
+**Table 3**
+
+</Center>
+
+
+<question multiplechoice>
+csq_prompt = "Can you identify this binary pattern 10101 belongs to which card?"
+csq_options = ["P", "S", "T", "U"]
+csq_soln = "U"
+</question>
+
+<table cellpadding="15" cellspacing="0" width="100%">
+<tr>
+<td width="65%" valign="top">
+These binary numbers indicate us a unique way to punch holes in cards of corresponding alphabets. A '0' indicates a hole (i.e. a complete circular hole, where a stick can be inserted horizontally but can't escape vertically) and a '1' indicates a slit (i.e. a hole which is open and lets a stick escape through it vertically irrespective of its entry- horizontal or vertical). For example: 00001 is the binary equivalent for A, so all holes on card A will be punched according to this binary number (see Image 1: the first 4 punches are complete holes and the last punch is a slit according to binary representation). Holes and slits in all other cards have been punched according to their respective binary representation (see image here).
+</td>
+<td width="35%" valign="top">
+<img src="CURRENT/compute_1.png" alt="Image 1: Card A punching pattern" width="80%">
+</td>
+</tr>
+</table>
+
+<question multiplechoice>
+csq_prompt = "The alphabet R comes 18th in the order starting from A as 1. What will be the punching pattern on Card R?"
+csq_options = ["U0U0U", "UU0U0", "U00U0", "0UU00"]
+csq_soln = "U00U0"
+</question>
+
+**[Make your own set of punched cards from any deck of playing cards !!](https://youtu.be/00s82px4_ow?si=CY7oKXI6egKtQTDW)**
+
+---
+
+<Center>
+
+## Sorting Cards
+
+</Center>
+
+Pick the deck of cards in your palm and shuffle these till these have mixed up well and the order has got disturbed. Now, follow these steps to get these cards in their right order:
+
+1. Insert a stick in the rightmost hole or slit (whichever is in the rightmost) and pull the cards up.
+2. Some cards (say Type I) will get attached to the stick and rest of the cards tend to fall down (say Type II) which you hold up in your palm.
+3. Place these cards (Type I) ahead of the remaining cards (Type II).
+4. Now, place the stick in the second rightmost hole, again there will be some Type I cards and Type II cards. Repeat step iii.
+5. Repeat the process until the stick makes way to the leftmost hole/slit and club the Type I cards and place these cards ahead of remaining cards. The cards will be arranged in order.
+
+### Understand the Sorting Algorithm
+
+The explanation lies in the video itself. Let's understand how the stick trick works to sort the cards in right way (The pictures represent sorting for cards numbered from 1 to 8):
+
+- Before inserting the stick in the rightmost hole/slit. (Image 2)
+- After inserting the stick in the rightmost hole/slit and clubbing the hanging cards (Type I) together. (Image 3)
+
+<Center>
+<img src="CURRENT/image_23.png" alt="Image 2 and 3: Sorting demonstration" width="60%">
+</Center>
+
+So after this step the numbers 0,2,4,6 which have a 0 in the rightmost place in binary representation will be before 1,3,5,7 respectively which have a 1 in the rightmost place.
+
+(iii) Before inserting the stick in the second rightmost hole/slit (or middle hole/slit) (Image 4).
+
+<Center>
+<img src="CURRENT/image_45.png" alt="Image 4" width="60%">
+</Center>
+
+(iv) After inserting the stick in the second rightmost hole/slit and clubbing the Type I cards together (Image 5).
+
+After this step the numbers 0, 1 will be placed before the numbers 2, 3. Similarly 4, 5 will be placed before 6, 7. This placement does not disturb the order established in step ii.
+
+(v) Before inserting the stick in the leftmost hole (last hole/slit) (Image 6).
+
+<Center>
+<img src="CURRENT/image_67.png" alt="Image 6" width="60%">
+</Center>
+
+(vi) After inserting the stick in the leftmost hole and clubbing the Type I cards together.
+
+After this step the numbers 0, 1, 2, 3 will be placed before the numbers 4, 5, 6, 7 thus sorting the cards and without disturbing the previous order.
+
+The whole transformation can be summarised as:
+
+<Center>
+<img src="CURRENT/image_8.png" alt="Image 8: Complete sorting transformation" width="60%">
+</Center>
+
+---
+
+<Center>
+
+## Any-base Sorting Cards
+
+</Center>
+
+So far, we have used the binary approach (basically two types of holes: a proper hole and a slit to represent 0 and 1 respectively) to punch the cards. Suppose, you have again shuffled 26 cards (alphabets). You already know about the binary approach, but you need to punch at 5 places on the card. This time, you would like to reduce the number of punched places on cards and this can be done by using the ternary (also called base 3) number system.
+
+In the previously discussed activities, we converted decimal numbers to binary numbers. In the same way, we generate ternary equivalents for decimal numbers (See Table 4).
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Letter</th><th>Corresponding Decimal Number</th><th>Corresponding Ternary Number</th></tr>
+<tr><td>A</td><td>1</td><td>001</td></tr>
+<tr><td>B</td><td>2</td><td>002</td></tr>
+<tr><td>C</td><td>3</td><td>010</td></tr>
+<tr><td>D</td><td>4</td><td>011</td></tr>
+<tr><td>E</td><td>5</td><td>012</td></tr>
+<tr><td>F</td><td>6</td><td>020</td></tr>
+<tr><td>G</td><td>7</td><td>021</td></tr>
+<tr><td>H</td><td>8</td><td>022</td></tr>
+<tr><td>I</td><td>9</td><td>100</td></tr>
+<tr><td>J</td><td>10</td><td>101</td></tr>
+<tr><td>K</td><td>11</td><td>102</td></tr>
+<tr><td>L</td><td>12</td><td>110</td></tr>
+<tr><td>M</td><td>13</td><td>111</td></tr>
+<tr><td>N</td><td>14</td><td>112</td></tr>
+<tr><td>O</td><td>15</td><td>120</td></tr>
+<tr><td>P</td><td>16</td><td>121</td></tr>
+<tr><td>Q</td><td>17</td><td>122</td></tr>
+<tr><td>R</td><td>18</td><td>200</td></tr>
+<tr><td>S</td><td>19</td><td>201</td></tr>
+<tr><td>T</td><td>20</td><td>202</td></tr>
+<tr><td>U</td><td>21</td><td>210</td></tr>
+<tr><td>V</td><td>22</td><td>211</td></tr>
+<tr><td>W</td><td>23</td><td>212</td></tr>
+<tr><td>X</td><td>24</td><td>220</td></tr>
+<tr><td>Y</td><td>25</td><td>221</td></tr>
+<tr><td>Z</td><td>26</td><td>222</td></tr>
+</table>
+
+**Table 4**
+
+</Center>
+
+In addition to binary, the alphabet cards in Image 1 are also punched in the ternary number system at the other end. Image 9 displays ternary based punching of cards numbered from 0-23.
+
+<Center>
+<img src="CURRENT/image_9.png" alt="Image 9: Ternary based punching" width="60%">
+</Center>
+
+Table 5 shows the correspondence of design of holes/slit with numbers 0, 1 and 2:
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Number</th><th>Type of Hole/Slit</th></tr>
+<tr><td>0</td><td>Hole (H)</td></tr>
+<tr><td>1</td><td>Half Slit (S1)</td></tr>
+<tr><td>2</td><td>Complete Slit (S2)</td></tr>
+</table>
+
+**Table 5**
+
+</Center>
+
+In ternary approach, we would use two different sticks: one stick/needle (say ST1) which can be inserted in the hole (H), half slit (S1) and complete slit (S2) but can escape (vertically) only through S1 and S2; and another stick (say ST2) which can be inserted in H, S1 and S2 but can escape (vertically) only through S2.
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th></th><th>ST1</th><th>ST2</th></tr>
+<tr><td>H</td><td>X</td><td>X</td></tr>
+<tr><td>S1</td><td>O</td><td>X</td></tr>
+<tr><td>S2</td><td>O</td><td>O</td></tr>
+</table>
+
+**Table 6** (Relationship between sticks and holes/slits)
+
+Can't escape: X; Can escape: O
+
+</Center>
+
+Make punches corresponding to three holes (see Image 1) in your alphabet cards and shuffle the cards. Follow these steps to get your cards in right order:
+
+1. Insert ST1 into the rightmost hole/slit and club Type I cards together and place these ahead of the remaining cards.
+2. Insert ST2 again into the rightmost hole/slit and club Type I cards together and place these ahead of remaining cards.
+3. Repeat the steps (i) and (ii) (first ST1 and then ST2) for the middle hole/slit, club the Type I cards together and place them ahead of the remaining cards.
+4. Repeat the process until ST2 makes way to the leftmost hole/slit, clubbing the Type I cards together and placing them ahead of the remaining cards. The cards will get arranged in proper order.
+
+---
+
+## References
+
+1. [https://en.wikipedia.org/wiki/Pingala](https://en.wikipedia.org/wiki/Pingala)
+
+---
+
+<Center>
+
+## Logical Reasoning using Punched Cards
+
+</Center>
+
+*Need Intro*
+
+### Binary System
+
+The five bulbs, Yellow, Pink, Red, Green, and Blue, are represented by the five holes, which in turn represent binary digits. Each 1 (or U slit hole) corresponds to a true term; each 0 (or O hole), to a false term. Each card is a unique combination of true and false terms, and since the 32 cards exhaust all possible combinations, they are the equivalent of what is called a "truth table" for the five terms.
+
+The operation of the cards is explained by showing how they can be used for solving a problem in two-valued logic. We can start by taking case 1, which contains 8 cards and focusing only on Red, Green, and Blue light. Three statements are given containing simple assertions and negation statements. The aim is to determine which bulbs are on or off among these.
+
+To solve this problem, start with the punch cards in any order. Only three terms are involved, so we shall be concerned with only the R, G, and B holes.
+
+<Center>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td>R</td><td>Red bulb is 'ON'</td></tr>
+<tr><td>R̅</td><td>Red bulb is 'OFF'</td></tr>
+<tr><td>G</td><td>Green bulb is 'ON'</td></tr>
+<tr><td>G̅</td><td>Green bulb is 'OFF'</td></tr>
+<tr><td>B</td><td>Blue bulb is 'ON'</td></tr>
+<tr><td>B̅</td><td>Blue bulb is 'OFF'</td></tr>
+</table>
+
+</Center>
+
+### Case 1: RGB (with 8 cards only)
+
+**Statements:**
+
+A. The red bulb is 'ON'
+
+B. The blue bulb is 'OFF'
+
+C. 'ON' bulb only has 'OFF' Neighbour
+
+The problem has three statements. The first statement, A, "The red bulb is 'ON'," tells us that the combination R̅XX cards is not permitted, so we must eliminate all cards bearing this combination. It is done as follows. Insert the stick in the R position and lift. The stick will raise all cards bearing R̅ cards, the invalid combination, so these cards are discarded. All remaining cards are assembled into a pack once more (in any order), and we are ready for the second statement.
+
+<question multiplechoice>
+csq_prompt = "After performing an action using Statement A, how many cards are left in the pack?"
+csq_options = ["8", "4", "2", "1"]
+csq_soln = "4"
+</question>
+
+The second statement, B, "The blue bulb is 'OFF'," tells us that the combination XXB cards is not permitted, so we must eliminate all cards bearing this combination. Similarly to the statement A, insert the stick in the B position and lift. The stick will raise all cards bearing B̅ cards, the valid combination, so these cards we need to keep; the cards in our hands need to be discarded. All remaining cards are assembled into a pack once more (in any order), and we are ready for the third statement.

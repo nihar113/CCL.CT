@@ -4,10 +4,11 @@
 
 ## Modules
 
-* [Module 1: Representation](CURRENT/representation) — Pixels, Number Bases, Number Systems
-* [Module 2: Algorithms](CURRENT/algorithms) — Searching, Sorting, Combinatorics
-* [Module 3: AI & ML](CURRENT/ai_ml) — Logical Reasoning, Decision Making, Neural Networks
-* [Module 4: Architecture](CURRENT/architecture) — Mechanical Devices, Calculators, Logic Gates
+* [Module 1: Computing with Punched Cards](CURRENT/punched_cards) — Binary Representation, Sorting Algorithm, Logical Reasoning
+* [Module 2: Representation](CURRENT/representation) — Pixels, Number Bases, Number Systems
+* [Module 3: Algorithms](CURRENT/algorithms) — Searching, Sorting, Combinatorics
+* [Module 4: AI & ML](CURRENT/ai_ml) — Logical Reasoning, Decision Making, Neural Networks
+* [Module 5: Architecture](CURRENT/architecture) — Mechanical Devices, Calculators, Logic Gates
 
 
 ## About
