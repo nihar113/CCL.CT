@@ -137,7 +137,17 @@ csq_options = ["U0U0U", "UU0U0", "U00U0", "0UU00"]
 csq_soln = "U00U0"
 </question>
 
-**[Make your own set of punched cards from any deck of playing cards !!](https://youtu.be/00s82px4_ow?si=CY7oKXI6egKtQTDW)**
+**Make your own set of punched cards from any deck of playing cards !!**
+
+<Center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/00s82px4_ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</Center>
+
+<question fileupload>
+csq_prompt = "Upload a photo or short video showing your own set of punched cards made from a deck of playing cards.<br/><br/>"
+csq_nsubmits = None
+csq_soln = ""
+</question>
 
 ---
 
@@ -154,6 +164,10 @@ Pick the deck of cards in your palm and shuffle these till these have mixed up w
 3. Place these cards (Type I) ahead of the remaining cards (Type II).
 4. Now, place the stick in the second rightmost hole, again there will be some Type I cards and Type II cards. Repeat step iii.
 5. Repeat the process until the stick makes way to the leftmost hole/slit and club the Type I cards and place these cards ahead of remaining cards. The cards will be arranged in order.
+
+<Center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F3DagixkqsQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</Center>
 
 ### Understand the Sorting Algorithm
 
@@ -193,6 +207,12 @@ The whole transformation can be summarised as:
 <Center>
 <img src="CURRENT/image_8.png" alt="Image 8: Complete sorting transformation" width="60%">
 </Center>
+
+<question fileupload>
+csq_prompt = "Upload a short video showing you sorting the shuffled punched cards using the stick method.<br/><br/>"
+csq_nsubmits = None
+csq_soln = ""
+</question>
 
 ---
 
@@ -301,29 +321,39 @@ Make punches corresponding to three holes (see Image 1) in your alphabet cards a
 
 </Center>
 
-*Need Intro*
+In this activity, you will use punched cards to solve logical puzzles. Each hole on a card stands for a simple true/false (ON/OFF) condition, and each card represents one possible combination, like a row in a truth table. By stacking, aligning, and filtering the cards, we will see how complex reasoning can be built from simple binary decisions, mirroring how binary logic works inside a computer.
 
 ### Binary System
 
-The five bulbs, Yellow, Pink, Red, Green, and Blue, are represented by the five holes, which in turn represent binary digits. Each 1 (or U slit hole) corresponds to a true term; each 0 (or O hole), to a false term. Each card is a unique combination of true and false terms, and since the 32 cards exhaust all possible combinations, they are the equivalent of what is called a "truth table" for the five terms.
+The five bulbs, Yellow, Pink, Red, Green, and Blue, are represented by the five holes, which in turn represent binary digits. Each 1 (or U slit hole) corresponds to a true term, or 'ON' state; each 0 (or O hole), to a false term, or 'OFF' state. Each card is a unique combination of true and false terms, and since the 32 cards exhaust all possible combinations, they are the equivalent of what is called a "truth table" for the five terms.
+
+<question multiplechoice>
+csq_prompt = "Can you identify which bulb are 'OFF' based on below card?"
+csq_options = ["Blue bulb", "Green bulb", "Red Bulb", "All bulbs are OFF"]
+csq_soln = "Blue bulb"
+</question>
 
 The operation of the cards is explained by showing how they can be used for solving a problem in two-valued logic. We can start by taking case 1, which contains 8 cards and focusing only on Red, Green, and Blue light. Three statements are given containing simple assertions and negation statements. The aim is to determine which bulbs are on or off among these.
 
 To solve this problem, start with the punch cards in any order. Only three terms are involved, so we shall be concerned with only the R, G, and B holes.
 
-<Center>
+R = Red bulb is 'ON'
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr><th>Symbol</th><th>Meaning</th></tr>
-<tr><td>R</td><td>Red bulb is 'ON'</td></tr>
-<tr><td>R̅</td><td>Red bulb is 'OFF'</td></tr>
-<tr><td>G</td><td>Green bulb is 'ON'</td></tr>
-<tr><td>G̅</td><td>Green bulb is 'OFF'</td></tr>
-<tr><td>B</td><td>Blue bulb is 'ON'</td></tr>
-<tr><td>B̅</td><td>Blue bulb is 'OFF'</td></tr>
-</table>
+R̅ = Red bulb is 'OFF'
 
-</Center>
+G = Green bulb is 'ON'
+
+G̅ = Green bulb is 'OFF'
+
+B = Blue bulb is 'ON'
+
+B̅ = Blue bulb is 'OFF'
+
+<question multiplechoice>
+csq_prompt = "Can you identify which bulb is OFF based on this pattern: RGB̅?"
+csq_options = ["Red bulb", "Green bulb", "Blue Bulb", "All bulbs are OFF"]
+csq_soln = "Blue Bulb"
+</question>
 
 ### Case 1: RGB (with 8 cards only)
 
@@ -343,4 +373,22 @@ csq_options = ["8", "4", "2", "1"]
 csq_soln = "4"
 </question>
 
-The second statement, B, "The blue bulb is 'OFF'," tells us that the combination XXB cards is not permitted, so we must eliminate all cards bearing this combination. Similarly to the statement A, insert the stick in the B position and lift. The stick will raise all cards bearing B̅ cards, the valid combination, so these cards we need to keep; the cards in our hands need to be discarded. All remaining cards are assembled into a pack once more (in any order), and we are ready for the third statement.
+The second statement, B, "The blue bulb is 'ON'," tells us that the combination XXB cards is not permitted, so we must eliminate all cards bearing this combination. Similarly to the statement A, insert the stick in the B position and lift. The stick will raise all cards bearing B̅ cards, the valid combination, so these cards we need to keep; the cards in other hands need to be discarded. All remaining cards are assembled into a pack once more (in any order), and we are ready for the third statement.
+
+<question multiplechoice>
+csq_prompt = "After performing the action using Statement B, among these, which card will not be eliminated?"
+csq_options = ["RGB", "RG̅B", "RGB̅", "All will be eliminated"]
+csq_soln = "RGB̅"
+</question>
+
+The third statement, C, "'ON' bulb only has 'OFF' Neighbour," here we need to recall the first statement that "The red bulb is 'ON'," tells us that the Green bulb neighbouring the Red bulb should be 'OFF', that is, we need to eliminate the X1X combinations. Insert the stick in the G position and lift. The stick will raise all cards bearing G̅ cards, the invalid combination, so these cards are discarded.
+
+After this action, only one card will be left, and that will be the solution to the logical puzzle.
+
+<question smallbox>
+csq_prompt = "Write down the pattern of the last card (solution)."
+csq_soln = "RG̅B̅"
+csq_check_function = lambda sub, sol: sub.strip().upper().replace(" ", "") == sol.upper().replace(" ", "")
+</question>
+
+We can now take case 2, which contains 8 cards again. Instead of three statements, there are now only two, and instead of simple assertions and negations, we are introducing the Either/Or statement.

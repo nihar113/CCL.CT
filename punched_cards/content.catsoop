@@ -16,6 +16,14 @@ Consider set of cards with alphabet on top & you want to sort the shuffled cards
 
 Punched cards have a long history in the computing starting from 19th in data processing, controlling machines to computing to 20th century in early digital computers. The card used here have two types of holes in the top - circular hole (denoted as 0) and U slit (denoted as 1), its a binary way of punching. The module starts with number representation in binary, its root in Indian knowledge system (binary in the context of Sansakrit grammar & binary arithmetic by Acharya Pingala in Chandaḥśāstra 2 BCE) [1], sorting algorithm, various base representation in punched card trick, logical reasoning with cards.
 
+<Center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vlSHW-bV7H8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</Center>
+
 ## Content
 
 1. [Binary Number Presentation](CURRENT/binary_number_presentation)
+2. Punching Patterns
+3. Sorting Cards
+4. Any-base Sorting Cards
+5. Logical Reasoning using Punched Cards
