@@ -6,7 +6,10 @@ import re
 # Define all exercises with their paths and names
 # Format: (module_path, activity_path, activity_name)
 exercises = [
-    # Module 1: Representation
+    # Module 1: Punched Cards
+    ('punched_cards', 'binary_number_presentation', 'Binary Number Presentation'),
+
+    # Module 2: Representation
     ('representation', 'measure_height', 'Measure Height'),
     ('representation', 'binary_counter', 'Binary Counter'),
     ('representation', 'tiles_art', 'Tiles Art'),
@@ -17,7 +20,7 @@ exercises = [
     ('representation', 'gear_enigma_1', 'Gear Enigma 1'),
     ('representation', 'paper_enigma', 'Paper Enigma'),
 
-    # Module 2: Algorithms
+    # Module 3: Algorithms
     ('algorithms', 'khota_sikka', 'Khota Sikka'),
     ('algorithms', 'sorting_network', 'Sorting Network'),
     ('algorithms', 'punched_cards_az', 'Punched Cards A-Z'),
@@ -41,22 +44,25 @@ exercises = [
 ]
 
 def count_questions_in_exercise(module_path, activity_path):
-    """Count total number of questions in an exercise by reading the file"""
+    """Count total number of questions in an exercise by reading the file.
+    Returns tuple: (regular_questions, file_upload_questions)"""
     course_root = os.path.join(cs_data_root, 'courses', cs_course)
     file_path = os.path.join(course_root, module_path, activity_path, 'content.catsoop')
 
     if not os.path.exists(file_path):
-        return 0
+        return 0, 0
 
     try:
         with open(file_path, 'r') as f:
             content = f.read()
 
         # Count <question> tags (matches <question pythonliteral>, <question multiplechoice>, etc.)
-        question_count = len(re.findall(r'<question\s+\w+>', content))
-        return question_count
+        all_questions = re.findall(r'<question\s+(\w+)>', content)
+        file_upload_count = sum(1 for q in all_questions if q == 'fileupload')
+        regular_count = len(all_questions) - file_upload_count
+        return regular_count, file_upload_count
     except:
-        return 0
+        return 0, 0
 
 def get_exercise_status(module_path, activity_path):
     """Get the submission status for an exercise"""
@@ -70,23 +76,36 @@ def get_exercise_status(module_path, activity_path):
     )
 
     if not logs:
-        return None
+        return None, None
 
     scores = logs.get('scores', {})
     filtered_scores = {k: v for k, v in scores.items() if not k.startswith('_')}
 
-    return filtered_scores
+    # Get file submissions separately
+    file_info = logs.get('file_info', {})
 
-def calculate_stats(scores, total_questions):
-    """Calculate correct/attempted/total questions"""
+    return filtered_scores, file_info
+
+def calculate_stats(scores, file_info, regular_questions, file_upload_questions):
+    """Calculate correct/attempted/total questions including file uploads"""
+    total_questions = regular_questions + file_upload_questions
+
     if scores is None:
-        attempted = 0
-        correct = 0
+        regular_attempted = 0
+        regular_correct = 0
     else:
-        attempted = len(scores)
-        correct = sum(1 for score in scores.values() if score >= 1.0)
+        regular_attempted = min(len(scores), regular_questions)
+        regular_correct = sum(1 for score in list(scores.values())[:regular_questions] if score >= 1.0)
 
-    return correct, attempted, total_questions
+    # Count file uploads as submitted/not submitted
+    file_submitted = 0
+    if file_info:
+        file_submitted = min(len(file_info), file_upload_questions)
+
+    total_attempted = regular_attempted + file_submitted
+    total_correct = regular_correct + file_submitted  # File uploads count as "correct" if submitted
+
+    return total_correct, total_attempted, total_questions, file_submitted, file_upload_questions
 </python>
 
 <div style="max-width: 1000px; margin: 20px auto;">
@@ -104,6 +123,7 @@ print('<th style="padding: 12px; text-align: center;">Status</th>')
 print('<th style="padding: 12px; text-align: center;">Correct</th>')
 print('<th style="padding: 12px; text-align: center;">Attempted</th>')
 print('<th style="padding: 12px; text-align: center;">Total</th>')
+print('<th style="padding: 12px; text-align: center;">Files</th>')
 print('<th style="padding: 12px; text-align: center;">Score</th>')
 print('</tr>')
 print('</thead>')
@@ -111,9 +131,9 @@ print('<tbody>')
 
 current_module = None
 for module_path, activity_path, activity_name in exercises:
-    total_questions = count_questions_in_exercise(module_path, activity_path)
-    scores = get_exercise_status(module_path, activity_path)
-    correct, attempted, total = calculate_stats(scores, total_questions)
+    regular_questions, file_upload_questions = count_questions_in_exercise(module_path, activity_path)
+    scores, file_info = get_exercise_status(module_path, activity_path)
+    correct, attempted, total, file_submitted, file_total = calculate_stats(scores, file_info, regular_questions, file_upload_questions)
 
     # Module name formatting
     module_display = module_path.replace('_', ' ').title()
@@ -125,18 +145,21 @@ for module_path, activity_path, activity_name in exercises:
         correct_text = '0'
         attempted_text = '0'
         total_text = '0'
+        file_text = '-'
         avg_score = '-'
-    elif scores is None or attempted == 0:
+    elif (scores is None or attempted == 0) and file_submitted == 0:
         status = '○ Not Started'
         bg_color = '#f8f9fa'
         correct_text = '0'
         attempted_text = '0'
         total_text = str(total)
+        file_text = f'0/{file_total}' if file_total > 0 else '-'
         avg_score = '-'
     else:
         correct_text = str(correct)
         attempted_text = str(attempted)
         total_text = str(total)
+        file_text = f'{file_submitted}/{file_total}' if file_total > 0 else '-'
 
         avg_score_num = correct / total if total > 0 else 0
         avg_score = f'{avg_score_num * 100:.0f}%'
@@ -159,6 +182,7 @@ for module_path, activity_path, activity_name in exercises:
     print(f'<td style="padding: 10px; text-align: center;">{correct_text}</td>')
     print(f'<td style="padding: 10px; text-align: center;">{attempted_text}</td>')
     print(f'<td style="padding: 10px; text-align: center;">{total_text}</td>')
+    print(f'<td style="padding: 10px; text-align: center;">{file_text}</td>')
     print(f'<td style="padding: 10px; text-align: center; font-weight: bold;">{avg_score}</td>')
     print('</tr>')
 

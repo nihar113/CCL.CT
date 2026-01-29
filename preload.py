@@ -22,9 +22,9 @@ cs_top_menu = [
     {
         "text": "Modules",
         "link": [
-            {"text": "Module 1: Representation", "link": "COURSE/representation"},
-            {"text": "Module 2: Algorithms", "link": "COURSE/algorithms"},
-            {"text": "Module 3: AI & ML", "link": "COURSE/ai_ml"},
+            {"text": "Module 1: Punched Cards", "link": "COURSE/punched_cards"},
+            {"text": "Module 2: Representation", "link": "COURSE/representation"},
+            {"text": "Module 3: Algorithms", "link": "COURSE/algorithms"},
             {"text": "Module 4: Architecture", "link": "COURSE/architecture"},
         ],
     },
